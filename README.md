@@ -1,4 +1,4 @@
-# RCs that keep me from ending it all
+# RCs that keep me from ending it all.
 
 **rc file**: /R·C fi:l/, n.
 
