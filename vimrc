@@ -42,6 +42,8 @@ let mapleader=","           " leader is comma
 " Basics {{{
 syntax on
 set shell=bash
+" disable folding, idk why this is default
+set nofoldenable
 " }}}
 
 
@@ -122,8 +124,9 @@ set splitbelow
 " new vertival splits go right
 set splitright
 
-nnoremap <leader>v :vsp<CR>
-nnoremap <leader>h :sp<CR>
+" Vertical means panes will be stacked vertically, similarly for horizontal
+nnoremap <leader>v :sp<CR>
+nnoremap <leader>h :vsp<CR>
 
 " Resizing windows
 nnoremap <leader>= <C-w>=
