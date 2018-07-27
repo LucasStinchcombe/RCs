@@ -42,4 +42,17 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+export STORAGE_FILE=".env_storage.txt"
+
+store() {
+    touch $STORAGE_FILE
+    if [ $1 == "var" ]; then
+        echo "var|$2|${!2}\n" >> $STORAGE_FILE
+    fi
+
+    if [ $1 == "alias" ]; then
+        echo "alias|$2|$(alias $2 | cut -d '=' -f 2-)" >> $STORAGE_FILE
+    fi
+}
+
 set -o vi      # vi style command line mode
