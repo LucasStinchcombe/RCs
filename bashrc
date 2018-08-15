@@ -70,4 +70,7 @@ PS1+=" \[${Purple}\]\w\[${NC}\]]"
 #PS1+="\[${BGreen}\]$(parse_git_branch)\[${NC}\]"
 PS1+="\$ \[${NC}\]"
 
+LS_COLORS=$LS_COLORS:'di=1;32:' ; export LS_COLORS
+alias ls='ls --color=auto'
+
 printf "$RECUR_MSG"
