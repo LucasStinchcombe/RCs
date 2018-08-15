@@ -73,6 +73,10 @@ set expandtab
 set shiftwidth=4
 " round to nearest multiple of shiftwidth
 set shiftround
+" show tabs as T>>>
+highlight SpecialKey ctermfg=1
+set list
+set listchars=tab:T>
 
 filetype indent on
 filetype plugin on

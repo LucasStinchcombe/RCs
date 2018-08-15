@@ -64,13 +64,19 @@ Purple='\e[0;35m'
 BGreen='\e[1;32m'
 NC="\e[m"               # Color Reset
 
-PS1="\[${NC}\][\[${BROWN}\]\h"
-PS1+=" \[${Green}\]\t"
-PS1+=" \[${Purple}\]\w\[${NC}\]]"
-#PS1+="\[${BGreen}\]$(parse_git_branch)\[${NC}\]"
-PS1+="\$ \[${NC}\]"
+# PS1 prompt
+MY_PS1='\[${NC}\][\[${BROWN}\]\h '
+MY_PS1+='\[${Green}\]\t '
+MY_PS1+='\[${Purple}\]\w\[${NC}\]]'
+MY_PS1+='\[${BGreen}\]$(parse_git_branch)\[${NC}\]'
+MY_PS1+='\$ \[${NC}\]'
+PROMPT_COMMAND='PS1="'$MY_PS1'";'
 
-LS_COLORS=$LS_COLORS:'di=1;32:' ; export LS_COLORS
+# LS color directories
+export LS_COLORS=$LS_COLORS:'di=1;32:'
 alias ls='ls --color=auto'
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 printf "$RECUR_MSG"
