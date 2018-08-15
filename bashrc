@@ -1,6 +1,6 @@
 # Bashrc that keeps me from ending it all.
 
-export TOP_MSG="
+export RECUR_MSG="
     \"TO UNDERSTAND RECURSION ONE MUST FIRST UNDERSTAND RECURSION.\"
 
                            .,,uod8B8bou,,.
@@ -36,7 +36,6 @@ export TOP_MSG="
         
 "
 
-printf "$TOP_MSG"
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -55,4 +54,20 @@ store() {
     fi
 }
 
+alias gco='git checkout'
 set -o vi      # vi style command line mode
+
+# Chill Colours
+BROWN='\e[38;5;138m'
+Green='\e[0;32m'
+Purple='\e[0;35m'
+BGreen='\e[1;32m'
+NC="\e[m"               # Color Reset
+
+PS1="\[${NC}\][\[${BROWN}\]\h"
+PS1+=" \[${Green}\]\t"
+PS1+=" \[${Purple}\]\w\[${NC}\]]"
+#PS1+="\[${BGreen}\]$(parse_git_branch)\[${NC}\]"
+PS1+="\$ \[${NC}\]"
+
+printf "$RECUR_MSG"

@@ -12,7 +12,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" add plugins after this line
+" NerdTree
 Plugin 'scrooloose/nerdtree'
 " For supercollider vim
 Plugin 'sbl/scvim'
