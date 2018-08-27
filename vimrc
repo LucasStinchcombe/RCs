@@ -56,8 +56,12 @@ nnoremap <leader>l :setlocal number!<CR>
 nnoremap <leader>r :set relativenumber!<CR>
 
 set colorcolumn=80
-set showmatch               " highlight matching [{()}]
-set wrap                      " wrap lines
+" show matching ([{}])
+set showmatch
+" wrap text
+set wrap
+" highlight search results
+set hlsearch
 " }}} UI Config
 
 
