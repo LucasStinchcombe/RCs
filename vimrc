@@ -62,6 +62,9 @@ set showmatch
 set wrap
 " highlight search results
 set hlsearch
+" highlight trailing spaces
+highlight TrailingSpace ctermbg=red guibg=red
+match TrailingSpace /\s\+$/
 " }}} UI Config
 
 
