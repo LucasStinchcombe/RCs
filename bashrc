@@ -42,4 +42,13 @@ alias ls='ls --color=auto'
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-cat ~/RCs/assets/recursion.txt
+export HISTSIZE=-1
+export HISTFILESIZE=-1
+
+RAND=$(shuf -i 0-1 -n 1)
+
+if [ $RAND -eq 1 ]; then
+    cat ~/RCs/assets/recursion.txt
+else
+    cat ~/RCs/assets/you.txt
+fi
