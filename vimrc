@@ -103,8 +103,15 @@ nnoremap k gk
 set mouse=a
 
 " Enable/disable mouse (useful for copy paste to/from terminal window)
-nnoremap <leader>m :set mouse=a<CR>
-nnoremap <leader>n :set mouse=<CR>
+nnoremap <leader>m :call ToggleMouse()<CR>
+
+function! ToggleMouse()
+    if &mouse == 'a'
+        set mouse=
+    else
+        set mouse=a
+    endif
+endfunction
 
 " move between windows sensibly
 nmap <C-j> <C-w>j
