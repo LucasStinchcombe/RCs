@@ -156,32 +156,7 @@ nnoremap <F10> <C-w>>
 nnoremap <F9> <C-w><
 " Windows and Tabs }}}
 
-
-" Not really useful, just keeping here for reference.
-" c++ boilerplate {{{
-function H_Header(programName)
-    let s:line=line(".")
-    let s:filename=expand('%:t')
-    let s:flag=toupper(a:programName . "_" . expand('%:t:r')) . "_H"
-
-    call setline(s:line,"/*")
-    call append(s:line," * @file " . s:filename)
-    call append(s:line+1," */")
-    call append(s:line+2,"")
-    call append(s:line+3,"#ifndef" . " " . s:flag)
-    call append(s:line+4,"#define" . " " . s:flag)
-    call append(s:line+5,"")
-    call append(s:line+6,"#endif")
-    unlet s:flag
-    unlet s:filename
-    unlet s:line
-endfunction
-
-command! -nargs=1 Headerh execute H_Header(<q-args>)
-" }}}
-
-
-" Plugins Below this line
+" Plugin configuration below this line
 " -----------------------------------------------------
 
 " nerdTree {{{
