@@ -84,6 +84,8 @@ set shiftround
 highlight SpecialKey ctermfg=1
 set list
 set listchars=tab:T>
+" toggle expandtab
+nnoremap <leader>t :set expandtab!<CR>
 
 filetype indent on
 filetype plugin on
