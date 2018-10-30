@@ -4,35 +4,30 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export STORAGE_FILE=".env_storage.txt"
+random_artwork()
+{
+    local ASSETS=~/RCs/assets
 
-store() {
-    touch $STORAGE_FILE
-    if [ $1 == "var" ]; then
-        echo "var|$2|${!2}\n" >> $STORAGE_FILE
-    fi
-
-    if [ $1 == "alias" ]; then
-        echo "alias|$2|$(alias $2 | cut -d '=' -f 2-)" >> $STORAGE_FILE
-    fi
+    # random file in $ASSETS directory
+    local RAND=$(shuf -i 1-"$(ls $ASSETS | wc -l)" -n 1)
+    local FILE=$(ls $ASSETS | head -n $RAND | tail -1)
+    cat "${ASSETS}/${FILE}"
 }
 
-alias gco='git checkout'
-set -o vi      # vi style command line mode
-
-# Chill Colours
+# Colour definitions
 BROWN='\e[38;5;138m'
 Green='\e[0;32m'
 Purple='\e[0;35m'
 BGreen='\e[1;32m'
-NC="\e[m"               # Color Reset
+# Color Reset
+NC="\e[m"
 
 # PS1 prompt
-MY_PS1='\[${NC}\][\[${BROWN}\]\h '
-MY_PS1+='\[${Green}\]\t '
-MY_PS1+='\[${Purple}\]\w\[${NC}\]]'
-MY_PS1+='\[${BGreen}\]$(parse_git_branch)\[${NC}\]'
-MY_PS1+='\$ \[${NC}\]'
+MY_PS1='\[${NC}\][\[${BROWN}\]\h '                  # host
+MY_PS1+='\[${Green}\]\t '                           # time
+MY_PS1+='\[${Purple}\]\w\[${NC}\]]'                 # pwd
+MY_PS1+='\[${BGreen}\]$(parse_git_branch)\[${NC}\]' # git branch
+MY_PS1+='\$ \[${NC}\]'                              # Ty Dolla $ign
 PROMPT_COMMAND='PS1="'$MY_PS1'";'
 
 # LS color directories
@@ -43,21 +38,14 @@ alias ls='ls --color=auto'
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# vi style command line mode
+set -o vi
+
 # History sizes, unbounded for in-memory and file
 export HISTSIZE=-1
 export HISTFILESIZE=-1
 
 alias ssh="ssh -v"
 alias scp="scp -v"
-
-random_artwork()
-{
-    local ASSETS=~/RCs/assets
-
-    # random file in $ASSETS directory
-    local RAND=$(shuf -i 1-"$(ls $ASSETS | wc -l)" -n 1)
-    local FILE=$(ls $ASSETS | head -n $RAND | tail -1)
-    cat "${ASSETS}/${FILE}"
-}
 
 random_artwork
