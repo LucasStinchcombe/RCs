@@ -45,10 +45,8 @@ export EDITOR="$VISUAL"
 export HISTSIZE=-1
 export HISTFILESIZE=-1
 
-RAND=$(shuf -i 0-1 -n 1)
+ASSETS=~/RCs/assets
+RAND=$(shuf -i 1-"$(ls $ASSETS | wc -l)" -n 1)
 
-if [ $RAND -eq 1 ]; then
-    cat ~/RCs/assets/recursion.txt
-else
-    cat ~/RCs/assets/you.txt
-fi
+FILE=$(ls $ASSETS | head -n $RAND | tail -1)
+cat "${ASSETS}/${FILE}"
