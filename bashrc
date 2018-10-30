@@ -39,14 +39,25 @@ PROMPT_COMMAND='PS1="'$MY_PS1'";'
 export LS_COLORS=$LS_COLORS:'di=1;32:'
 alias ls='ls --color=auto'
 
+# Default editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# History sizes, unbounded for in-memory and file
 export HISTSIZE=-1
 export HISTFILESIZE=-1
 
-ASSETS=~/RCs/assets
-RAND=$(shuf -i 1-"$(ls $ASSETS | wc -l)" -n 1)
+alias ssh="ssh -v"
+alias scp="scp -v"
 
-FILE=$(ls $ASSETS | head -n $RAND | tail -1)
-cat "${ASSETS}/${FILE}"
+random_artwork()
+{
+    local ASSETS=~/RCs/assets
+
+    # random file in $ASSETS directory
+    local RAND=$(shuf -i 1-"$(ls $ASSETS | wc -l)" -n 1)
+    local FILE=$(ls $ASSETS | head -n $RAND | tail -1)
+    cat "${ASSETS}/${FILE}"
+}
+
+random_artwork
