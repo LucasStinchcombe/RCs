@@ -88,8 +88,10 @@ set list
 set listchars=tab:T>
 " toggle expandtab
 nnoremap <leader>t :call ToggleCmd("expandtab")<CR>
-" toggle paste 
+" toggle paste
 nnoremap <leader>p :call ToggleCmd("paste")<CR>
+" display full path of file
+nnoremap <leader>c :echo expand('%:p')<CR>
 
 filetype indent on
 filetype plugin on
