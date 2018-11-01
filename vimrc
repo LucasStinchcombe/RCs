@@ -44,6 +44,8 @@ syntax on
 set shell=bash
 " disable folding, idk why this is default
 set nofoldenable
+" source vimrc
+nnoremap <leader>s :call RunCmd("source", $MYVIMRC)<CR>
 " }}}
 
 
@@ -51,9 +53,9 @@ set nofoldenable
 " show line numbers
 set number
 " toggle line numbers
-nnoremap <leader>l :setlocal number!<CR>
+nnoremap <leader>l :call ToggleCmd("number")<CR>
 " toggle relative numbers
-nnoremap <leader>r :set relativenumber!<CR>
+noremap <leader>r :call ToggleCmd("relativenumber")<CR>
 
 set colorcolumn=80
 " show matching ([{}])
@@ -85,7 +87,9 @@ highlight SpecialKey ctermfg=1
 set list
 set listchars=tab:T>
 " toggle expandtab
-nnoremap <leader>t :set expandtab!<CR>
+nnoremap <leader>t :call ToggleCmd("expandtab")<CR>
+" toggle paste 
+nnoremap <leader>p :call ToggleCmd("paste")<CR>
 
 filetype indent on
 filetype plugin on
@@ -105,13 +109,6 @@ set mouse=a
 " Enable/disable mouse (useful for copy paste to/from terminal window)
 nnoremap <leader>m :call ToggleMouse()<CR>
 
-function! ToggleMouse()
-    if &mouse == 'a'
-        set mouse=
-    else
-        set mouse=a
-    endif
-endfunction
 
 " move between windows sensibly
 nmap <C-j> <C-w>j
@@ -165,3 +162,34 @@ let NERDTreeDirArrows=0
 let NERDTreeDirArrowExpandable='+'
 let NERDTreeDirArrowCollapsible='~'
 " }}}
+
+" Run command and display with variables expanded
+if exists("*RunCmd") == 0
+    function! RunCmd(...)
+        let cmd = join(a:000, ' ')
+        exec cmd
+        echo cmd
+    endfunction
+endif
+
+if exists("*ToggleCmd") == 0
+    function! ToggleCmd(val)
+        exec "set ".a:val."!"
+        exec "let cur=&".a:val
+        if cur
+            echo a:val." mode ON"
+        else
+            echo a:val." mode OFF"
+        endif
+    endfunction
+endif
+
+function! ToggleMouse()
+    if &mouse == 'a'
+        set mouse=
+        echo "mouse mode OFF"
+    else
+        set mouse=a
+        echo "mouse mode ON"
+    endif
+endfunction
