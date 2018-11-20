@@ -42,9 +42,10 @@ export EDITOR="$VISUAL"
 set -o vi
 
 # History sizes, unbounded for in-memory and file
-export HISTSIZE=-1
-export HISTFILESIZE=-1
+export HISTSIZE=
+export HISTFILESIZE=
 
+export no_proxy='localhost'
 alias ssh="ssh -v"
 alias scp="scp -v"
 
