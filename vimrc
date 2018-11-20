@@ -134,6 +134,9 @@ set path+=**
 
 " Open vimrc for a quick looksy
 cnoreabbrev moi :sp $MYVIMRC
+
+" Abbreviate ff to find file
+cnoreabbrev ff find
 " Utils }}}
 
 
