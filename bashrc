@@ -49,4 +49,7 @@ export no_proxy='localhost'
 alias ssh="ssh -v"
 alias scp="scp -v"
 
+# Readonly vim
+alias vimr="vim -R"
+
 random_artwork
