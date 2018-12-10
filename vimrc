@@ -82,10 +82,9 @@ set expandtab
 set shiftwidth=4
 " round to nearest multiple of shiftwidth
 set shiftround
-" show tabs as T>>>
-highlight SpecialKey ctermfg=1
-set list
-set listchars=tab:T>
+" highlight Tabs
+highlight Tabs ctermbg=238
+match Tabs /\t/
 " toggle expandtab
 nnoremap <leader>t :call ToggleCmd("expandtab")<CR>
 " toggle paste
@@ -106,7 +105,7 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 " move vertically by visual line (not line number)
 nnoremap j gj
 nnoremap k gk
-set mouse=a
+set mouse=
 
 " Enable/disable mouse (useful for copy paste to/from terminal window)
 nnoremap <leader>m :call ToggleMouse()<CR>
