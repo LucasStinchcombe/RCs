@@ -110,12 +110,18 @@ set mouse=
 " Enable/disable mouse (useful for copy paste to/from terminal window)
 nnoremap <leader>m :call ToggleMouse()<CR>
 
-
 " move between windows sensibly
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
+
+" Resizing panes
+nnoremap <leader>= <C-w>=
+nmap <C-y> <C-w><
+nmap <C-u> <C-w>-
+nmap <C-i> <C-w>+
+nmap <C-o> <C-w>>
 " Movement }}}
 
 
@@ -132,10 +138,7 @@ cnoreabbrev df :w !diff % -
 set path+=**
 
 " Open vimrc for a quick looksy
-cnoreabbrev moi :sp $MYVIMRC
-
-" Abbreviate ff to find file
-cnoreabbrev ff find
+cnoreabbrev man :sp $MYVIMRC
 " Utils }}}
 
 
@@ -148,14 +151,6 @@ set splitright
 " Vertical means panes will be stacked vertically, similarly for horizontal
 nnoremap <leader>v :sp<CR>
 nnoremap <leader>h :vsp<CR>
-
-" Resizing windows
-nnoremap <leader>= <C-w>=
-nnoremap <F12> <C-w>+
-nnoremap <F11> <C-w>-
-nnoremap <F10> <C-w>>
-nnoremap <F9> <C-w><
-" Windows and Tabs }}}
 
 " Plugin configuration below this line
 " -----------------------------------------------------
