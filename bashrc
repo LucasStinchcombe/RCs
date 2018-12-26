@@ -52,4 +52,7 @@ alias scp="scp -v"
 # Readonly vim
 alias vimr="vim -R"
 
+# 256 color terminal in tmux
+alias tmux="tmux -2"
+
 random_artwork
