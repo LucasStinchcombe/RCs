@@ -66,7 +66,7 @@ set wrap
 set hlsearch
 " highlight trailing spaces
 highlight TrailingSpace ctermbg=red guibg=red
-match TrailingSpace /\s\+$/
+autocmd BufWinEnter * 2match TrailingSpace /\s\+$/
 " }}} UI Config
 
 
@@ -84,7 +84,7 @@ set shiftwidth=4
 set shiftround
 " highlight Tabs
 highlight Tabs ctermbg=238
-match Tabs /\t/
+autocmd BufWinEnter * match Tabs /\t/
 " toggle expandtab
 nnoremap <leader>t :call ToggleCmd("expandtab")<CR>
 " toggle paste
