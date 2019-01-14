@@ -67,6 +67,10 @@ set hlsearch
 " highlight trailing spaces
 highlight TrailingSpace ctermbg=red guibg=red
 autocmd BufWinEnter * 2match TrailingSpace /\s\+$/
+"Green Comments
+highlight Comment ctermfg=008000 guifg=#008000
+"Blue Search Hits
+highlight Search ctermfg=grey ctermbg=blue
 " }}} UI Config
 
 
