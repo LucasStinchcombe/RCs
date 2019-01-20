@@ -94,7 +94,7 @@ nnoremap <leader>t :call ToggleCmd("expandtab")<CR>
 " toggle paste
 nnoremap <leader>p :call ToggleCmd("paste")<CR>
 " display full path of file
-nnoremap <leader>c :echo expand('%:p')<CR>
+nnoremap <leader>g :echo expand('%:p')<CR>
 
 filetype indent on
 filetype plugin on

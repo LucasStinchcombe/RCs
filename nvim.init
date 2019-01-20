@@ -1,1 +1,4 @@
 source ~/.vimrc
+
+tnoremap <C-[> <C-\><C-n>
+nnoremap <leader>c :terminal<CR>
