@@ -7,7 +7,7 @@ rc_install()
     if [ -f ~/.vimrc ]; then
         echo "Skip"
     else
-        ln -s ~/RCs/vimrc ~/.vimrc
+        ln -s ~/RCs/rcfiles/vimrc ~/.vimrc
         echo "Done"
     fi
 

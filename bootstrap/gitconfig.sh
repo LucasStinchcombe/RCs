@@ -7,7 +7,7 @@ rc_install()
     if [ $? -eq 0 ]; then
         echo "Skip"
     else
-        printf "[include]\n\tpath = ~/RCs/gitconfig\n" >> ~/.gitconfig
+        printf "[include]\n\tpath = $RC_FILES_DIR/gitconfig\n" >> ~/.gitconfig
         echo "Done"
     fi
 }
