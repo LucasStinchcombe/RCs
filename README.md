@@ -8,19 +8,4 @@ From <http://www.catb.org/jargon/html/R/rc-file.html>
 
 ## Setup
 Git clone this repo to root directory as `~/RCs/`.
-
-Add to `~/.gitconfig`:
-```
-[include]
-    path = ~/RCs/gitconfig
-```
-
-symlink `~/.vimrc`
-```vim
-ln -s ~/RCs/vimrc ~/.vimrc
-```
-
-add to `~/.profile`:
-```bash
-. ~/RCs/bashrc
-```
+`bootstrap.sh` shell script will symlink, add includes, install plugins to bootstrap your system.
