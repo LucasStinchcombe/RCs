@@ -1,13 +1,14 @@
-# bootstrap vim
+# bootstrap neovim
 
 rc_install()
 {
     # symlink vimrc
-    echo -n "Symlinking vimrc: "
-    if [ -f ~/.vimrc ]; then
+    echo -n "Symlinking neovim init.vim: "
+    if [ -f ~/.config/nvim/init.vim ]; then
         echo "Skip"
     else
-        ln -s $RC_FILES_DIR/vimrc ~/.vimrc
+        mkdir -p ~/.config/nvim
+        ln -s $RC_FILES_DIR/nvimrc ~/.config/nvim/init.vim
         echo "Done"
     fi
 
@@ -19,8 +20,8 @@ rc_install()
     fi
 
     # Install plugins
-    echo -n "Installing Vundle vim plugins: "
-    vim +PluginInstall +qall
+    echo -n "Installing Vundle neovim plugins: "
+    nvim +PluginInstall +qall
     echo "Done"
 
 }
