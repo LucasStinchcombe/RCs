@@ -38,9 +38,6 @@ alias ls='ls --color=auto'
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# vi style command line mode
-set -o vi
-
 # History sizes, unbounded for in-memory and file
 export HISTSIZE=
 export HISTFILESIZE=
