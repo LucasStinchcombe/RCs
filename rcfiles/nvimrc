@@ -11,3 +11,6 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 
 " On terminal panel enter, start instert
 autocmd BufWinEnter,WinEnter term://* startinsert
+
+" nerdTree toggle to work in terminal mode
+tnoremap <leader>f <C-\><C-n>:NERDTreeToggle<cr>
