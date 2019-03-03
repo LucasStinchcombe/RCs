@@ -1,4 +1,4 @@
-# bootstrap bashrc
+#!/bin/bash
 
 rc_install()
 {
@@ -6,7 +6,7 @@ rc_install()
     if [ -f ~/.inputrc ]; then
         echo "Skip"
     else
-        ln -s $RC_FILES_DIR/inputrc ~/.inputrc
+        ln -s "$RC_FILES_DIR/inputrc" ~/.inputrc
         echo "Done"
     fi
 }

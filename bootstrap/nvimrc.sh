@@ -1,4 +1,4 @@
-# bootstrap neovim
+#!/bin/bash
 
 rc_install()
 {
@@ -8,7 +8,7 @@ rc_install()
         echo "Skip"
     else
         mkdir -p ~/.config/nvim
-        ln -s $RC_FILES_DIR/nvimrc ~/.config/nvim/init.vim
+        ln -s "RC_FILES_DIR/nvimrc" ~/.config/nvim/init.vim
         echo "Done"
     fi
 

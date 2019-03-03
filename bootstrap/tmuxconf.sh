@@ -1,4 +1,4 @@
-# bootstrap tmux.conf
+#!/bin/bash
 
 rc_install()
 {
@@ -7,7 +7,7 @@ rc_install()
     if [ -f ~/.tmux.conf ]; then
         echo "Skip"
     else
-        ln -s $RC_FILES_DIR/tmux.conf ~/.tmux.conf
+        ln -s "$RC_FILES_DIR/tmux.conf" ~/.tmux.conf
         echo "Done"
     fi
 }

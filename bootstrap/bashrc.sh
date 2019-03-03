@@ -1,13 +1,16 @@
-# bootstrap bashrc
+#!/bin/bash
 
 rc_install()
 {
     echo -n "Updating bashrc: "
-    grep $RC_FILES_DIR/bashrc ~/.bashrc > /dev/null
-    if [ $? -eq 0 ]; then
+
+    # Check if repository bashrc is sourced from system bashrc
+    if grep "$RC_FILES_DIR/bashrc" ~/.bashrc > /dev/null
+    then
         echo "Skip"
     else
-        printf "\n. $RC_FILES_DIR/bashrc\n" >> ~/.bashrc
+        printf '\n# Source bashrc from RCs repo\n' >> ~/.bashrc
+        echo ". $RC_FILES_DIR/bashrc" >> ~/.bashrc
         echo "Done"
     fi
 }

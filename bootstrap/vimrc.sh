@@ -1,4 +1,4 @@
-# bootstrap vim
+#!/bin/bash
 
 rc_install()
 {
@@ -7,7 +7,7 @@ rc_install()
     if [ -f ~/.vimrc ]; then
         echo "Skip"
     else
-        ln -s $RC_FILES_DIR/vimrc ~/.vimrc
+        ln -s "$RC_FILES_DIR/vimrc" ~/.vimrc
         echo "Done"
     fi
 

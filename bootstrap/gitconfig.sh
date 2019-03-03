@@ -1,13 +1,14 @@
-# bootstrap gitconfig
+#!/bin/bash
 
 rc_install()
 {
     echo -n "Updating gitconfig: "
-    grep "\[include\]" ~/.gitconfig > /dev/null
-    if [ $? -eq 0 ]; then
+
+    if grep '\[include\]' ~/.gitconfig > /dev/null;
+    then
         echo "Skip"
     else
-        printf "[include]\n\tpath = $RC_FILES_DIR/gitconfig\n" >> ~/.gitconfig
+        printf '[include]\n\tpath = %s/gitconfig\n' "$RC_FILES_DIR" >> ~/.gitconfig
         echo "Done"
     fi
 }
