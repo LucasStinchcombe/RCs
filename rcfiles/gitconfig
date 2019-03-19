@@ -1,3 +1,6 @@
 [alias]
-    tree = log --topo-order --color --graph --decorate=short --abbrev-commit --date=short --pretty=tformat:'%C (yellow)%h%Creset %ad %C(blue)%an%C(auto)%d%Creset %s'
-    cleanup = !git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
+    tree = log --topo-order --color --graph --decorate=short --abbrev-commit \
+           --date=short --pretty=tformat:'%C (yellow)%h%Creset %ad %C(blue)%an%C(auto)%d%Creset %s'
+    cleanup = !git branch --merged | grep  -v '\\*\\|master\\|develop' \
+              | xargs -n 1 git branch -d
+    top = "!f() { git log -n "$1"; }; f"
