@@ -5,4 +5,11 @@
               | xargs -n 1 git branch -d
     top = "!f() { if [ -z "$1" ]; then git log -n 1; \
                     else git log -n "$1"; fi }; f"
-    sdiff = diff --staged
+    co = checkout
+    cm = "!f() { git commit -m \"$*\"; }; f"
+    ca = commit --amend
+    d = diff
+    sd = diff --staged
+    s = status
+    adu = add -u
+    alias = config --get-regexp alias
