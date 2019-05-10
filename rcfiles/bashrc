@@ -52,6 +52,9 @@ alias vimr="vim -R"
 # 256 color terminal in tmux
 alias tmux="tmux -2"
 
+# Sometimes I type gh for fg
+alias gh="fg"
+
 # Inputrc vi mode doesn't work correctly?
 set -o vi
 
