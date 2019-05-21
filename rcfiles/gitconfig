@@ -1,3 +1,5 @@
+[push]
+    default = current
 [alias]
     tree = log --topo-order --color --graph --decorate=short --abbrev-commit \
            --date=short --pretty=tformat:'%C (yellow)%h%Creset %ad %C(blue)%an%C(auto)%d%Creset %s'
@@ -12,4 +14,6 @@
     sd = diff --staged
     s = status
     adu = add -u
+    rh = reset --hard
+    b = branch
     alias = config --get-regexp alias
