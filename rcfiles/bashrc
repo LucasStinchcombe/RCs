@@ -52,6 +52,9 @@ alias vimr="vim -R"
 # 256 color terminal in tmux
 alias tmux="tmux -2"
 
+# default intel syntax
+alias objdump="objdump -Mintel"
+
 # Inputrc vi mode doesn't work correctly?
 set -o vi
 
