@@ -43,8 +43,6 @@ export HISTSIZE=
 export HISTFILESIZE=
 
 export no_proxy='localhost'
-alias ssh="ssh -v"
-alias scp="scp -v"
 
 # Readonly vim
 alias vimr="vim -R"
@@ -54,6 +52,9 @@ alias tmux="tmux -2"
 
 # default intel syntax
 alias objdump="objdump -Mintel"
+
+# Sometimes I type gh for fg
+alias gh="fg"
 
 # Inputrc vi mode doesn't work correctly?
 set -o vi
