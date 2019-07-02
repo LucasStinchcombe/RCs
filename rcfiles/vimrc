@@ -156,6 +156,9 @@ set splitright
 nnoremap <leader>v :sp<CR>
 nnoremap <leader>h :vsp<CR>
 
+" Open a tab with current pane
+nnoremap <leader>o :tabedit %<CR>
+
 " Plugin configuration below this line
 " -----------------------------------------------------
 
