@@ -59,4 +59,5 @@ alias gh="fg"
 # Inputrc vi mode doesn't work correctly?
 set -o vi
 
-random_artwork
+# Set $NO_ARTWORK for no artwork
+if [[ -z "$NO_ARTWORK" ]]; then random_artwork; fi
