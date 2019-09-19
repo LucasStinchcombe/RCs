@@ -14,6 +14,35 @@ random_artwork()
     cat "${ASSETS}/${FILE}"
 }
 
+setproxy_http()
+{
+    export http_proxy="$1"
+    export HTTP_PROXY="$1"
+}
+
+setproxy_https()
+{
+    export https_proxy="$1"
+    export HTTPS_PROXY="$1"
+}
+
+setproxy(){
+    if [[ -z "$1" ]]; then
+        setproxy_http $DEFAULT_PROXY
+        setproxy_https $DEFAULT_PROXY
+    else
+        setproxy_http $1
+        setproxy_https $1
+    fi
+}
+
+unsetproxy(){
+    unset http_proxy
+    unset HTTP_PROXY
+    unset https_proxy
+    unset HTTPS_PROXY
+}
+
 # Colour definitions
 BROWN='\e[38;5;138m'
 Green='\e[0;32m'
