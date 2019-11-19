@@ -14,6 +14,8 @@
     sd = diff --staged
     s = status
     adu = add -u
+    r = reset
     rh = reset --hard
     b = branch
+
     alias = config --get-regexp alias
