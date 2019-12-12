@@ -1,5 +1,11 @@
 # Bashrc that keeps me from ending it all.
 
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -59,34 +65,43 @@ MY_PS1+='\[${BGreen}\]$(parse_git_branch)\[${NC}\]' # git branch
 MY_PS1+='\$ \[${NC}\]'                              # Ty Dolla $ign
 PROMPT_COMMAND='PS1="'$MY_PS1'";'
 
-# LS color directories
-export LS_COLORS=$LS_COLORS:'di=1;32:'
-alias ls='ls --color=auto'
-
-# Default editor
-export VISUAL=vim
-export EDITOR="$VISUAL"
-
-# History sizes, unbounded for in-memory and file
+HISTCONTROL=ignoreboth
+    # don't put duplicate lines or lines starting with space in the history.
+    # See bash(1) for more options
+shopt -s histappend
+    # append to the history file, don't overwrite it
 export HISTSIZE=
 export HISTFILESIZE=
+    # History sizes, unbounded for in-memory and file
+
+shopt -s checkwinsize
+    # check the window size after each command and, if necessary,
+    # update the values of LINES and COLUMNS.
+
+export LS_COLORS=$LS_COLORS:'di=1;32:'
+alias ls='ls --color=auto'
+    # LS color directories
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+    # Default editor
 
 export no_proxy='localhost'
 
-# Readonly vim
 alias vimr="vim -R"
+    # Readonly vim
 
-# 256 color terminal in tmux
 alias tmux="tmux -2"
+    # 256 color terminal in tmux
 
-# default intel syntax
 alias objdump="objdump -Mintel"
+    # default intel syntax
 
-# Sometimes I type gh for fg
 alias gh="fg"
+    # Sometimes I type gh for fg
 
-# Inputrc vi mode doesn't work correctly?
 set -o vi
+    # Inputrc vi mode doesn't work correctly?
 
-# Set $NO_ARTWORK for no artwork
 if [[ -z "$NO_ARTWORK" ]]; then random_artwork; fi
+    # Set $NO_ARTWORK for no artwork
