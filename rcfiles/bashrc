@@ -10,6 +10,12 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+venv_tag() {
+    if [ ! -z "$VIRTUAL_ENV" ]; then
+        echo "(venv)"
+    fi
+}
+
 random_artwork()
 {
     local ASSETS=~/RCs/assets
@@ -50,20 +56,25 @@ unsetproxy(){
 }
 
 # Colour definitions
-BROWN='\e[38;5;138m'
+Brown='\e[38;5;138m'
 Green='\e[0;32m'
 Purple='\e[0;35m'
 BGreen='\e[1;32m'
+Magenta='\e[95m'
 # Color Reset
 NC="\e[m"
 
 # PS1 prompt
-MY_PS1='\[${NC}\][\[${BROWN}\]\h '                  # host
+MY_PS1='\[${NC}\]\[${Magenta}\]$(venv_tag)'         # venv tag
+MY_PS1+='\[${NC}\][\[${Brown}\]\h '                 # host
 MY_PS1+='\[${Green}\]\t '                           # time
 MY_PS1+='\[${Purple}\]\w\[${NC}\]]'                 # pwd
 MY_PS1+='\[${BGreen}\]$(parse_git_branch)\[${NC}\]' # git branch
 MY_PS1+='\$ \[${NC}\]'                              # Ty Dolla $ign
 PROMPT_COMMAND='PS1="'$MY_PS1'";'
+
+export VIRTUAL_ENV_DISABLE_PROMPT
+    # Disable virtual env PS1
 
 HISTCONTROL=ignoreboth
     # don't put duplicate lines or lines starting with space in the history.
