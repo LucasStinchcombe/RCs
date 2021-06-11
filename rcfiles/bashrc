@@ -18,12 +18,12 @@ venv_tag() {
 
 random_artwork()
 {
-    local ASSETS=~/RCs/assets
+    local ARTWORK=~/RCs/assets/artwork
 
-    # random file in $ASSETS directory
-    local RAND=$(shuf -i 1-"$(ls $ASSETS | wc -l)" -n 1)
-    local FILE=$(ls $ASSETS | head -n $RAND | tail -1)
-    cat "${ASSETS}/${FILE}"
+    # random file in $ARTWORK directory
+    local RAND=$(shuf -i 1-"$(ls $ARTWORK | wc -l)" -n 1)
+    local FILE=$(ls $ARTWORK | head -n $RAND | tail -1)
+    cat "${ARTWORK}/${FILE}"
 }
 
 setproxy_http()
