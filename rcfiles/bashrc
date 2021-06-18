@@ -18,12 +18,27 @@ venv_tag() {
 
 random_artwork()
 {
-    local ARTWORK=~/RCs/assets/artwork
+    local ARTWORK_DIR=~/RCs/assets/artwork
 
-    # random file in $ARTWORK directory
-    local RAND=$(shuf -i 1-"$(ls $ARTWORK | wc -l)" -n 1)
-    local FILE=$(ls $ARTWORK | head -n $RAND | tail -1)
-    cat "${ARTWORK}/${FILE}"
+    # random file in $ARTWORK_DIR directory
+    local RAND=$(shuf -i 1-"$(ls $ARTWORK_DIR | wc -l)" -n 1)
+    local FILE=$(ls $ARTWORK_DIR | head -n $RAND | tail -1)
+    cat "${ARTWORK_DIR}/${FILE}"
+}
+
+word_of_the_session()
+{
+    local WORD_BANK_FILE=~/RCs/assets/word.bank
+    local RAND_WORDS=$(shuf -n 3 $WORD_BANK_FILE)
+
+    echo -e "\n$(tput smso)Session Dictionary$(tput sgr0) "
+    while IFS= read -r word; do
+        echo -e "\t$(tput smul)$word$(tput sgr0) "
+    done <<< "$RAND_WORDS";
+    # TODO output defintion
+    # local API_ROOT="https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+    # local REQUEST="${API_ROOT}/${RAND_WORD}?key=fd84320f-b3d5-45ec-9dc6-f231ca1b01b6"
+    # local data=$(curl $REQUEST 2> /dev/null)
 }
 
 setproxy_http()
@@ -123,3 +138,6 @@ set -o vi
 
 if [[ -z "$NO_ARTWORK" ]]; then random_artwork; fi
     # Set $NO_ARTWORK for no artwork
+
+if [[ -z "$NO_WORD_DEFINITION" ]]; then word_of_the_session; fi
+    # Set $NO_WORD_DEFINITION for no "word of the session"
