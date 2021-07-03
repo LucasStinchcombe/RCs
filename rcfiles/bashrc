@@ -141,3 +141,5 @@ if [[ -z "$NO_ARTWORK" ]]; then random_artwork; fi
 
 if [[ -z "$NO_WORD_DEFINITION" ]]; then word_of_the_session; fi
     # Set $NO_WORD_DEFINITION for no "word of the session"
+
+PATH=~/RCs/bin:$PATH

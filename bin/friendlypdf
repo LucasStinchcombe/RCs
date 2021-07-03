@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -eu -o pipefail
+
+tmpfile=$(mktemp /tmp/$1.XXXXXX)
+
+pdf2ps "${1}" "${tmpfile}"
+ps2pdf "${tmpfile}" "${1}"

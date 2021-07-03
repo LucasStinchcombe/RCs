@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -eu -o pipefail
+
+tmpfile=$(mktemp /tmp/word_bank.XXXXXX)
+
+cat "${1}" | sort | uniq > "${tmpfile}"
+mv "${tmpfile}" "${1}"
