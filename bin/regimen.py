@@ -29,7 +29,14 @@ imminent_counter = 0
 
 def now_exceeds(counter, minute = 0):
     now = datetime.now()
-    return ((counter + 1) % 24) <= now.hour and minute <= now.minute
+
+    # The smaller difference is used for the ordering
+    # This assumes that the counter doesn't lag more than 12 hours from 'now'
+    d1 = (now.hour - counter + 24) % 24
+    d2 = (counter - now.hour + 24) % 24
+    delta = d1 if d1 < d2 else d2
+
+    return delta > 0 and minute <= now.minute
 
 def output_debug():
     logging.debug(f"start_counter={start_counter}")
