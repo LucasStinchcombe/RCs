@@ -28,17 +28,23 @@ random_artwork()
 
 word_of_the_session()
 {
-    local WORD_BANK_FILE=~/RCs/assets/word.bank
-    local RAND_WORDS=$(shuf -n 3 $WORD_BANK_FILE)
+    # Number of words to output
+    local WORD_COUNT=1
+    local DICTIONARY_FILE=~/RCs/assets/dictionary.ndjson
+    local RAND_WORDS=$(shuf -n $WORD_COUNT $DICTIONARY_FILE)
 
-    echo -e "\n$(tput smso)Session Dictionary$(tput sgr0) "
     while IFS= read -r word; do
-        echo -e "\t$(tput smul)$word$(tput sgr0) "
-    done <<< "$RAND_WORDS";
-    # TODO output defintion
-    # local API_ROOT="https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
-    # local REQUEST="${API_ROOT}/${RAND_WORD}?key=fd84320f-b3d5-45ec-9dc6-f231ca1b01b6"
-    # local data=$(curl $REQUEST 2> /dev/null)
+        echo -e "$(tput smso)$(echo $word | jq -r '.word')$(tput sgr0)"
+        while IFS= read -r meaning; do
+            echo "  $(tput smul)$(echo $meaning | jq -r '.partOfSpeech')$(tput sgr0):"
+            local def_index=1
+            while IFS= read -r definition; do
+                echo -e "  $def_index) $(echo $definition | jq -r '.definition')"
+                def_index=$((def_index+1))
+            done <<< "$(echo $meaning | jq -rc '.definitions| .[] ')"
+        done <<< "$(echo $word | jq -rc '.meanings | .[]')"
+    done <<< "$(echo $RAND_WORDS | jq -c '.[]')"
+
 }
 
 setproxy_http()
