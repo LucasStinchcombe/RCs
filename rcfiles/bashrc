@@ -136,7 +136,7 @@ alias fgfg="fg"
     # Sometimes I type fg, go away, return and retype fg
 
 alias quit="exit"
-    # Sometimes I type fg, go away, return and retype fg
+    # Sometimes I type 'quit' rather than 'exit'
 
 
 set -o vi

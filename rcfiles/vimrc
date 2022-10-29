@@ -58,6 +58,8 @@ set number
 nnoremap <leader>l :call ToggleCmd("number")<CR>
 " toggle relative numbers
 noremap <leader>r :call ToggleCmd("relativenumber")<CR>
+" Fix for colors looking different in tmux
+set background=dark
 
 set colorcolumn=80
 " show matching ([{}])
@@ -165,6 +167,7 @@ highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+highlight Directory  cterm=bold ctermfg=105  guifg=#8787ff
 
 " Plugin configuration below this line
 " -----------------------------------------------------
