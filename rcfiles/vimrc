@@ -18,6 +18,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'cespare/vim-toml'
 " For supercollider vim
 Plugin 'sbl/scvim'
+" For Snippets (+ latex snippets)
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -177,6 +180,15 @@ nmap <silent> <leader>f :NERDTreeToggle<cr>
 let NERDTreeDirArrows=0
 let NERDTreeDirArrowExpandable='+'
 let NERDTreeDirArrowCollapsible='~'
+" }}}
+
+" UltiSnips {{{
+" use Tab to expand snippets
+let g:UltiSnipsExpandTrigger = '<Tab>'
+" use Tab to move forward through tabstops
+let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
+" use Shift-Tab to move backward through tabstops
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 " }}}
 
 " Run command and display with variables expanded
