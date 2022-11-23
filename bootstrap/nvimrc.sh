@@ -4,11 +4,11 @@ rc_install()
 {
     # symlink vimrc
     echo -n "Symlinking neovim init.vim: "
-    if [ -f ~/.config/nvim/init.vim ]; then
+    if [ -e "$HOME/.config/nvim/init.vim" ]; then
         echo "Skip"
     else
         mkdir -p ~/.config/nvim
-        ln -s "RC_FILES_DIR/nvimrc" ~/.config/nvim/init.vim
+        ln -s "$RC_FILES_DIR/nvimrc" ~/.config/nvim/init.vim
         echo "Done"
     fi
 
