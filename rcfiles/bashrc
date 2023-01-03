@@ -110,7 +110,7 @@ shopt -s checkwinsize
     # check the window size after each command and, if necessary,
     # update the values of LINES and COLUMNS.
 
-export LS_COLORS=$LS_COLORS:'di=1;32:'
+export LS_COLORS=$LS_COLORS:':di=1;32:ex=1;36:'
 alias ls='ls --color=auto'
     # LS color directories
 
