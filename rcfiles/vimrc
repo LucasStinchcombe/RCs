@@ -102,6 +102,10 @@ nnoremap <leader>t :call ToggleCmd("expandtab")<CR>
 nnoremap <leader>p :call ToggleCmd("paste")<CR>
 " display full path of file
 nnoremap <leader>g :echo expand('%:p')<CR>
+" Increment number
+nnoremap <leader>i <C-a>
+" Decrement number
+nnoremap <leader>d <C-x>
 
 filetype indent on
 filetype plugin on
