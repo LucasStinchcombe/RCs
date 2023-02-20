@@ -1,0 +1,204 @@
+priority 10
+
+# Environments {{{
+snippet begin "begin{}/end{}" bi
+\begin{$1}$2
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+snippet proof "Proof" bi
+\begin{proof}
+    ${0:${VISUAL}}
+\end{proof}
+endsnippet
+snippet solution "Solution" bi
+\begin{proof}[Solution]
+    ${0:${VISUAL}}
+\end{proof}
+endsnippet
+snippet claim "Claim" bi
+\begin{claim}
+    ${0:${VISUAL}}
+\end{claim}
+endsnippet
+snippet align "Align*" bi
+\begin{align*}
+    ${0:${VISUAL}}
+\end{align*}
+endsnippet
+snippet itemize "Itemize" bi
+\begin{itemize}
+    ${0:${VISUAL}}
+\end{itemize}
+endsnippet
+snippet labelalph "Label alph" i
+label=(\alph*)
+endsnippet
+# }}}
+
+# Various well-known sets {{{
+snippet reals "Reals" w
+\mathbb{R}
+endsnippet
+snippet naturals "Naturals" w
+\mathbb{N}
+endsnippet
+snippet rationals "Rationals" w
+\mathbb{Q}
+endsnippet
+snippet complex "Complex" w
+\mathbb{C}
+endsnippet
+# }}}
+
+snippet "{}" "Braces" r
+{${1:${VISUAL}}}$0
+endsnippet
+snippet "\[\]" "Brackets" r
+[${1:${VISUAL}}]$0
+endsnippet
+snippet "\(\)" "Parentheses" r
+(${1:${VISUAL}})$0
+endsnippet
+# }}}
+
+# Math {{{
+snippet abs "Absolute value" w
+\lvert ${1:${VISUAL}} \rvert $0
+endsnippet
+snippet bf "Bold" wi
+{\bf ${1:${VISUAL}}}$0
+endsnippet
+snippet bra "Bra" w
+\bra{${1:${VISUAL}}} $0
+endsnippet
+snippet circ "Circle" w
+\circ 
+endsnippet
+snippet cos "Cosine" w
+\cos 
+endsnippet
+snippet cong "Congruent" w
+\cong 
+endsnippet
+snippet dagger "Dagger" w
+\dagger 
+endsnippet
+snippet emptyset "Empty Set" w
+\emptyset 
+endsnippet
+snippet geq "Greater than or equal to" w
+\geq 
+endsnippet
+snippet hat "Hat" w
+\hat{${1:${VISUAL}}} $0
+endsnippet
+snippet mapsto "Maps to" w
+\mapsto
+endsnippet
+snippet ncong "Not Congruent" w
+\ncong 
+endsnippet
+snippet NN "cap" w
+\cap 
+endsnippet
+snippet notin "Not In" w
+\notin
+endsnippet
+snippet norm "Norm" w
+\lVert ${1:${VISUAL}} \rVert $0
+endsnippet
+snippet overline "Overline" w
+\overline{${1:${VISUAL}}} $0
+endsnippet
+snippet ket "Ket" w
+\ket{${1:${VISUAL}}} $0
+endsnippet
+snippet proves "Proves" wi
+\vdash 
+endsnippet
+snippet setminus "Set minus" w
+\setminus
+endsnippet
+snippet sin "Sine" w
+\sin 
+endsnippet
+snippet sqrt "Square Root" w
+\sqrt{${1:${VISUAL}}}$0
+endsnippet
+snippet st "Such that"
+\, \mid \,
+endsnippet
+snippet sc "Supset" w
+\supset
+endsnippet
+snippet text "Text" wi
+\text{${1:${VISUAL}}}$0
+endsnippet
+snippet times "Times" w
+\times 
+endsnippet
+snippet tilde "Tilde" w
+\tilde{${1:${VISUAL}}}$0
+endsnippet
+snippet rightarrow "Right Arrow" wi
+\rightarrow
+endsnippet
+snippet lr< "Angle Brackets" wi
+\langle ${1:${VISUAL}} \rangle $0
+endsnippet
+snippet lr2b "Double Brackets" wi
+\llbracket ${1:${VISUAL}} \rrbracket $0
+endsnippet
+snippet ll "subscript" i
+_{$1}$0
+endsnippet
+# }}}
+
+# Greek letters {{{
+snippet alpha "Alpha" w
+\alpha 
+endsnippet
+snippet beta "Beta" w
+\beta 
+endsnippet
+snippet gamma "Gamma" w
+\gamma 
+endsnippet
+snippet delta "Delta" w
+\delta 
+endsnippet
+snippet theta "Theta" w
+\theta 
+endsnippet
+snippet omega "Omega" w
+\omega 
+endsnippet
+snippet pi "Pi" w
+\pi 
+endsnippet
+snippet phi "Phi" w
+\phi 
+endsnippet
+snippet psi "Psi" w
+\psi 
+endsnippet
+snippet sigma "Sigma" w
+\sigma 
+endsnippet
+# }}}
+
+# Fonts {{{
+snippet bb "Math Bb" w
+\mathbb{${1:${VISUAL}}}$0
+endsnippet
+snippet ca "Math Cal" w
+\mathcal{${1:${VISUAL}}}$0
+endsnippet
+snippet textbf "Boldface Text" w
+\textbf{${1:${VISUAL}}}$0
+endsnippet
+snippet textit "Italics Text" w
+\textit{${1:${VISUAL}}}$0
+endsnippet
+# }}}

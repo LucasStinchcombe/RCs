@@ -20,6 +20,9 @@ Plugin 'cespare/vim-toml'
 Plugin 'sbl/scvim'
 " Terraform syntax
 Plugin 'hashivim/vim-terraform'
+" For Snippets (+ latex snippets)
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -101,6 +104,10 @@ nnoremap <leader>t :call ToggleCmd("expandtab")<CR>
 nnoremap <leader>p :call ToggleCmd("paste")<CR>
 " display full path of file
 nnoremap <leader>g :echo expand('%:p')<CR>
+" Increment number
+nnoremap <leader>i <C-a>
+" Decrement number
+nnoremap <leader>d <C-x>
 
 filetype indent on
 filetype plugin on
@@ -179,6 +186,15 @@ nmap <silent> <leader>f :NERDTreeToggle<cr>
 let NERDTreeDirArrows=0
 let NERDTreeDirArrowExpandable='+'
 let NERDTreeDirArrowCollapsible='~'
+" }}}
+
+" UltiSnips {{{
+" use Tab to expand snippets
+let g:UltiSnipsExpandTrigger = '<Tab>'
+" use Tab to move forward through tabstops
+let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
+" use Shift-Tab to move backward through tabstops
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 " }}}
 
 " Run command and display with variables expanded
