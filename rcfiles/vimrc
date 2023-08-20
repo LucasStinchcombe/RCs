@@ -25,6 +25,12 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Nginx
 Plugin 'chr4/nginx.vim'
+" Ale Linting
+Plugin 'dense-analysis/ale'
+" Airline
+Plugin 'vim-airline/vim-airline'
+" CTRLP
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,6 +71,10 @@ set number
 nnoremap <leader>l :call ToggleCmd("number")<CR>
 " toggle relative numbers
 noremap <leader>r :call ToggleCmd("relativenumber")<CR>
+" toggle ALE Linting
+noremap <leader>a :ALEToggle<CR>
+" Fuzzy file find by CTRLP
+noremap <leader>z :CtrlP<CR>
 " Fix for colors looking different in tmux
 set background=dark
 

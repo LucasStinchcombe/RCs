@@ -1,4 +1,33 @@
+# See https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+# for documentation. In particular "4.1.3 Snippet Options"
+
 priority 10
+
+# Packages {{{
+snippet pkg "basic packages" b
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=0.75in]{geometry}
+% include align, etc
+	\usepackage{amsmath}
+% include mathbb, etc
+	\usepackage{amsfonts}
+% self explanatory
+	\usepackage{braket}
+% include packages for algorithm writing
+	\usepackage{algorithm}
+	\usepackage{algpseudocode}
+% include theorem typesetting
+	\usepackage{amsthm}
+	\newtheorem{definition}{Definition}
+	\newtheorem{theorem}{Theorem}
+endsnippet
+# }}}
+
+snippet body "basic body" b
+\begin{document}
+\section{Introduction}
+\end{document}
+endsnippet
 
 # Environments {{{
 snippet begin "begin{}/end{}" bi
@@ -36,12 +65,19 @@ label=(\alph*)
 endsnippet
 # }}}
 
+
 # Various well-known sets {{{
 snippet reals "Reals" w
 \mathbb{R}
 endsnippet
 snippet naturals "Naturals" w
 \mathbb{N}
+endsnippet
+snippet integers "Integers" w
+\mathbb{Z}
+endsnippet
+snippet ints "Integers" w
+\mathbb{Z}
 endsnippet
 snippet rationals "Rationals" w
 \mathbb{Q}
@@ -99,6 +135,9 @@ endsnippet
 snippet ncong "Not Congruent" w
 \ncong 
 endsnippet
+snippet neq "Not Equal" w
+\neq
+endsnippet
 snippet NN "cap" w
 \cap 
 endsnippet
@@ -110,6 +149,9 @@ snippet norm "Norm" w
 endsnippet
 snippet overline "Overline" w
 \overline{${1:${VISUAL}}} $0
+endsnippet
+snippet otimes "Otimes" w
+\otimes
 endsnippet
 snippet ket "Ket" w
 \ket{${1:${VISUAL}}} $0
@@ -144,14 +186,20 @@ endsnippet
 snippet rightarrow "Right Arrow" wi
 \rightarrow
 endsnippet
+snippet leftarrow "Left Arrow" wi
+\leftarrow
+endsnippet
 snippet lr< "Angle Brackets" wi
 \langle ${1:${VISUAL}} \rangle $0
 endsnippet
-snippet lr2b "Double Brackets" wi
+snippet lr[[ "Double Brackets" wi
 \llbracket ${1:${VISUAL}} \rrbracket $0
 endsnippet
 snippet ll "subscript" i
 _{$1}$0
+endsnippet
+snippet widehat "Wide Hat" w
+\widehat
 endsnippet
 # }}}
 
@@ -177,11 +225,17 @@ endsnippet
 snippet pi "Pi" w
 \pi 
 endsnippet
-snippet phi "Phi" w
+snippet phi "phi" w
 \phi 
 endsnippet
-snippet psi "Psi" w
+snippet Phi "Phi" w
+\Phi 
+endsnippet
+snippet psi "psi" w
 \psi 
+endsnippet
+snippet Psi "Psi" w
+\Psi 
 endsnippet
 snippet sigma "Sigma" w
 \sigma 
@@ -192,7 +246,13 @@ endsnippet
 snippet bb "Math Bb" w
 \mathbb{${1:${VISUAL}}}$0
 endsnippet
+snippet mathbb "Math Bb" w
+\mathbb{${1:${VISUAL}}}$0
+endsnippet
 snippet ca "Math Cal" w
+\mathcal{${1:${VISUAL}}}$0
+endsnippet
+snippet mathcal "Math Cal" w
 \mathcal{${1:${VISUAL}}}$0
 endsnippet
 snippet textbf "Boldface Text" w
