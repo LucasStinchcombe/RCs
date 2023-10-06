@@ -9,6 +9,9 @@ snippet pkg "basic packages" b
 \usepackage[a4paper, margin=0.75in]{geometry}
 % include align, etc
 	\usepackage{amsmath}
+	\usepackage{amssymb}
+% include hyperlinks
+	\usepackage{hyperref}
 % include mathbb, etc
 	\usepackage{amsfonts}
 % self explanatory
@@ -25,9 +28,22 @@ endsnippet
 
 snippet body "basic body" b
 \begin{document}
+\maketitle
 \section{Introduction}
 \end{document}
 endsnippet
+
+snippet title "title" b
+\title{$1}
+\author{Lucas S. Stinchcombe$^{1}$ \\\\
+	\small $^{1}$School of Computing Science, Simon Fraser University, Canada}
+\date{\today}
+endsnippet
+
+snippet cmd "new command" b
+\newcommand\\$1[$2]{${0:${VISUAL}}}
+endsnippet
+
 
 # Environments {{{
 snippet begin "begin{}/end{}" bi
@@ -63,6 +79,12 @@ endsnippet
 snippet labelalph "Label alph" i
 label=(\alph*)
 endsnippet
+snippet eqref "eqref" bi
+~\eqref{${0:${VISUAL}}}
+endsnippet
+snippet ref "ref" bi
+~\ref{${0:${VISUAL}}}
+endsnippet
 # }}}
 
 
@@ -70,16 +92,13 @@ endsnippet
 snippet reals "Reals" w
 \mathbb{R}
 endsnippet
-snippet naturals "Naturals" w
+snippet nats "Naturals" w
 \mathbb{N}
-endsnippet
-snippet integers "Integers" w
-\mathbb{Z}
 endsnippet
 snippet ints "Integers" w
 \mathbb{Z}
 endsnippet
-snippet rationals "Rationals" w
+snippet rats "Rationals" w
 \mathbb{Q}
 endsnippet
 snippet complex "Complex" w
@@ -96,14 +115,32 @@ endsnippet
 snippet "\(\)" "Parentheses" r
 (${1:${VISUAL}})$0
 endsnippet
+snippet "br" "Braces" r
+{${1:${VISUAL}}}$0
+endsnippet
+snippet "Br" "Brackets" r
+[${1:${VISUAL}}]$0
+endsnippet
+snippet "p" "Parentheses" r
+(${1:${VISUAL}})$0
+endsnippet
 # }}}
 
 # Math {{{
+snippet inmath "Math Context" w
+$${1:${VISUAL}}$ $0
+endsnippet
+snippet inm "Math Context" w
+$${1:${VISUAL}}$ $0
+endsnippet
 snippet abs "Absolute value" w
 \lvert ${1:${VISUAL}} \rvert $0
 endsnippet
 snippet bf "Bold" wi
 {\bf ${1:${VISUAL}}}$0
+endsnippet
+snippet it "Italics" wi
+{\it ${1:${VISUAL}}}$0
 endsnippet
 snippet bra "Bra" w
 \bra{${1:${VISUAL}}} $0
@@ -199,7 +236,7 @@ snippet ll "subscript" i
 _{$1}$0
 endsnippet
 snippet widehat "Wide Hat" w
-\widehat
+\widehat{${1:${VISUAL}}} $0
 endsnippet
 # }}}
 
@@ -208,7 +245,7 @@ snippet alpha "Alpha" w
 \alpha 
 endsnippet
 snippet beta "Beta" w
-\beta 
+\beta
 endsnippet
 snippet gamma "Gamma" w
 \gamma 

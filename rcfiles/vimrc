@@ -60,7 +60,7 @@ set shell=bash
 " disable folding, idk why this is default
 set nofoldenable
 " source vimrc
-nnoremap <leader>s :call RunCmd("source", $MYVIMRC)<CR>
+nnoremap <leader>s :call RunCmd("source", $MYVIMRC)<CR> :call UltiSnips#RefreshSnippets()<CR>
 " }}}
 
 
