@@ -121,10 +121,120 @@ endsnippet
 snippet "Br" "Brackets" r
 [${1:${VISUAL}}]$0
 endsnippet
-snippet "p" "Parentheses" r
-(${1:${VISUAL}})$0
+# }}}
+
+
+# Binary Operators {{{
+snippet eq "equal" w
+= 
+endsnippet
+snippet neq "not equal" w
+\neq 
+endsnippet
+snippet cong "congruent" w
+\cong 
+endsnippet
+snippet ncong "not congruent" w
+\ncong 
+endsnippet
+snippet equiv "equivalent" w
+\equiv 
+endsnippet
+snippet nequiv "equivalent" w
+\not\equiv 
+endsnippet
+snippet geq "greater than or equal" w
+\geq 
+endsnippet
+snippet gt "greater than" w
+> 
+endsnippet
+snippet leq "less than or equal" w
+\leq 
+endsnippet
+snippet lt "less than" w
+< 
+endsnippet
+snippet times "times" w
+\times 
+endsnippet
+snippet otimes "otimes" w
+\otimes 
+endsnippet
+snippet plus "plus" w
++ 
+endsnippet
+snippet oplus "oplus" w
+\oplus 
 endsnippet
 # }}}
+
+# Logical Operators {{{
+snippet implies "implies" w
+\implies 
+endsnippet
+# }}}
+
+# Set Theory {{{
+snippet emptyset "empty set" w
+\emptyset 
+endsnippet
+snippet setminus "Set minus" w
+\setminus
+endsnippet
+snippet subset "subset" w
+\subseteq 
+endsnippet
+snippet neqsubset "strict subset" w
+\subsetneq 
+endsnippet
+snippet nsubset "not subset" w
+\nsubseteq 
+endsnippet
+snippet supset "superset" w
+\supseteq 
+endsnippet
+snippet neqsupset "superset" w
+\supsetneq 
+endsnippet
+snippet nsupset "superset" w
+\nsupseteq 
+endsnippet
+snippet cap "cap" w
+\cap 
+endsnippet
+snippet cup "cup" w
+\cup 
+endsnippet
+snippet inn "membership" w
+\in
+endsnippet
+snippet notin "not membership" w
+\notin
+endsnippet
+# }}}
+
+# Function Symbols {{{
+snippet rightarrow "right arrow" wi
+\rightarrow 
+endsnippet
+snippet -> "right arrow" wi
+\rightarrow 
+endsnippet
+snippet leftarrow "left arrow" wi
+\leftarrow 
+endsnippet
+snippet <- "left arrow" wi
+\leftarrow 
+endsnippet
+snippet mapsto "maps to" w
+\mapsto 
+endsnippet
+snippet |-> "maps to" w
+\mapsto 
+endsnippet
+# }}}
+
 
 # Math {{{
 snippet inmath "Math Context" w
@@ -151,38 +261,11 @@ endsnippet
 snippet cos "Cosine" w
 \cos 
 endsnippet
-snippet cong "Congruent" w
-\cong 
-endsnippet
 snippet dagger "Dagger" w
 \dagger 
 endsnippet
-snippet emptyset "Empty Set" w
-\emptyset 
-endsnippet
-snippet geq "Greater than or equal to" w
-\geq 
-endsnippet
 snippet hat "Hat" w
 \hat{${1:${VISUAL}}} $0
-endsnippet
-snippet mapsto "Maps to" w
-\mapsto
-endsnippet
-snippet |-> "Maps to" w
-\mapsto
-endsnippet
-snippet ncong "Not Congruent" w
-\ncong 
-endsnippet
-snippet neq "Not Equal" w
-\neq
-endsnippet
-snippet NN "cap" w
-\cap 
-endsnippet
-snippet notin "Not In" w
-\notin
 endsnippet
 snippet norm "Norm" w
 \lVert ${1:${VISUAL}} \rVert $0
@@ -190,17 +273,11 @@ endsnippet
 snippet overline "Overline" w
 \overline{${1:${VISUAL}}} $0
 endsnippet
-snippet otimes "Otimes" w
-\otimes
-endsnippet
 snippet ket "Ket" w
 \ket{${1:${VISUAL}}} $0
 endsnippet
 snippet proves "Proves" wi
 \vdash 
-endsnippet
-snippet setminus "Set minus" w
-\setminus
 endsnippet
 snippet sin "Sine" w
 \sin 
@@ -211,29 +288,11 @@ endsnippet
 snippet st "Such that"
 \, \mid \,
 endsnippet
-snippet sc "Supset" w
-\supset
-endsnippet
 snippet text "Text" wi
 \text{${1:${VISUAL}}}$0
 endsnippet
-snippet times "Times" w
-\times 
-endsnippet
 snippet tilde "Tilde" w
 \tilde{${1:${VISUAL}}}$0
-endsnippet
-snippet rightarrow "Right Arrow" wi
-\rightarrow
-endsnippet
-snippet -> "Right Arrow" wi
-\rightarrow
-endsnippet
-snippet leftarrow "Left Arrow" wi
-\leftarrow
-endsnippet
-snippet <- "Left Arrow" wi
-\leftarrow
 endsnippet
 snippet lr< "Angle Brackets" wi
 \langle ${1:${VISUAL}} \rangle $0
