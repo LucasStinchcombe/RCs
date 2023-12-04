@@ -4,7 +4,7 @@
 priority 10
 
 # Packages {{{
-snippet pkg "basic packages" b
+snippet pkgs "basic packages" b
 \documentclass[12pt]{article}
 \usepackage[a4paper, margin=0.75in]{geometry}
 % include align, etc
@@ -25,6 +25,12 @@ snippet pkg "basic packages" b
 	\newtheorem{theorem}{Theorem}
 endsnippet
 # }}}
+
+
+snippet cmds "commands" b
+\newcommand{\unlhdneq}{\mathrel{\ooalign{$\lneq$\cr\raise.22ex\hbox{$\lhd$}\cr}}}
+\newcommand{\rhdneq}{\mathrel{\ooalign{$\gneq$\cr\raise.22ex\hbox{$\rhd$}\cr}}}
+endsnippet
 
 snippet body "basic body" b
 \begin{document}
@@ -173,6 +179,9 @@ endsnippet
 snippet implies "implies" w
 \implies 
 endsnippet
+snippet iff "iff" w
+\iff 
+endsnippet
 # }}}
 
 # Set Theory {{{
@@ -236,6 +245,35 @@ endsnippet
 # }}}
 
 
+# Group Theory {{{
+snippet <| "left normal subgroup" w
+\unlhd 
+endsnippet
+snippet neq<| "strict left normal subgroup" w
+\unlhdneq
+endsnippet
+snippet |> "right normal subgroup" w
+\rhd 
+endsnippet
+snippet neq|> "strict right normal subgroup" w
+\rhdneq 
+endsnippet
+# }}}
+
+
+# Quantum Theory {{{
+snippet bra "Bra" w
+\bra{${1:${VISUAL}}} $0
+endsnippet
+snippet ket "Ket" w
+\ket{${1:${VISUAL}}} $0
+endsnippet
+snippet dagger "Dagger" w
+\dagger 
+endsnippet
+# }}}
+
+
 # Math {{{
 snippet inmath "Math Context" w
 $${1:${VISUAL}}$ $0
@@ -252,17 +290,11 @@ endsnippet
 snippet it "Italics" wi
 {\it ${1:${VISUAL}}}$0
 endsnippet
-snippet bra "Bra" w
-\bra{${1:${VISUAL}}} $0
-endsnippet
 snippet circ "Circle" w
 \circ 
 endsnippet
 snippet cos "Cosine" w
 \cos 
-endsnippet
-snippet dagger "Dagger" w
-\dagger 
 endsnippet
 snippet hat "Hat" w
 \hat{${1:${VISUAL}}} $0
@@ -272,9 +304,6 @@ snippet norm "Norm" w
 endsnippet
 snippet overline "Overline" w
 \overline{${1:${VISUAL}}} $0
-endsnippet
-snippet ket "Ket" w
-\ket{${1:${VISUAL}}} $0
 endsnippet
 snippet proves "Proves" wi
 \vdash 
@@ -305,9 +334,6 @@ _{$1}$0
 endsnippet
 snippet widehat "Wide Hat" w
 \widehat{${1:${VISUAL}}} $0
-endsnippet
-snippet <| "subgroup" w
-\unlhd
 endsnippet
 # }}}
 
