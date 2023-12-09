@@ -125,6 +125,7 @@ filetype indent on
 filetype plugin on
 set autoindent              " auto indent
 set smartindent             " smart indent
+set incsearch               " searches as you type with '/'
 
 set backspace=indent,eol,start " backspace over everything in insert mode
 " }}}
