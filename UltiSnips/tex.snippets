@@ -275,10 +275,10 @@ endsnippet
 
 # Abelian Operators {{{
 snippet sum "summation" w
-\sum_{${0:${VISUAL}}} 
+\sum_{${1:${VISUAL}}}$0
 endsnippet
 snippet bigoplus "big oplus" w
-\bigoplus_{${0:${VISUAL}}} 
+\bigoplus_{${1:${VISUAL}}}$0
 endsnippet
 # }}}
 
@@ -307,6 +307,9 @@ endsnippet
 snippet ker "kernel" w
 \ker 
 endsnippet
+snippet overset "overset" w
+\overset{$1}{${0:${VISUAL}}}$2
+endsnippet
 # }}}
 
 # Linear Algebra {{{
@@ -315,6 +318,9 @@ snippet compl "orthogonal complement" w
 endsnippet
 snippet tensor "tensor product" w
 \otimes 
+endsnippet
+snippet dim "dimension" w
+\dim 
 endsnippet
 # }}}
 
@@ -434,8 +440,6 @@ snippet dagger "Dagger" w
 endsnippet
 # }}}
 
-
-
 # Greek letters {{{
 snippet alpha "alpha" w
 \alpha 
@@ -538,5 +542,20 @@ snippet textbf "boldface text" w
 endsnippet
 snippet textit "italics text" w
 \textit{${1:${VISUAL}}}$0
+endsnippet
+# }}}
+
+# Accents {{{
+snippet umlat "umlat" w
+\"
+endsnippet
+snippet aigu "aigu" w
+\'
+endsnippet
+snippet circonflexe "circonflexe" w
+\^
+endsnippet
+snippet grave "grave" w
+\`
 endsnippet
 # }}}
