@@ -2,66 +2,110 @@
 # for documentation. In particular "4.1.3 Snippet Options"
 priority 10
 
-# Packages {{{
-snippet pkgs "basic packages" b
-\documentclass[12pt]{article}
-\usepackage[a4paper, margin=0.75in]{geometry}
-% include align, etc
-	\usepackage{amsmath}
-	\usepackage{amssymb}
-% include hyperlinks
-	\usepackage{hyperref}
-% include mathbb, etc
-	\usepackage{amsfonts}
-% self explanatory
-	\usepackage{braket}
-% include packages for algorithm writing
-	\usepackage{algorithm}
-	\usepackage{algpseudocode}
-% include theorem typesetting
-	\usepackage{amsthm}
-	\newtheorem{definition}{Definition}
-	\newtheorem{theorem}{Theorem}
+# Preamble {{{
+snippet preamble "preamble" b
+% Preamble {{{
+	\documentclass[12pt]{article}
+	\usepackage[a4paper, margin=0.75in]{geometry}
+
+	% include align, etc
+		\usepackage{amsmath}
+		\usepackage{amssymb}
+	% include hyperlinks
+		\usepackage{hyperref}
+	% include mathbb, etc
+		\usepackage{amsfonts}
+	% self explanatory
+		\usepackage{braket}
+	% include packages for algorithm writing
+		\usepackage{algorithm}
+		\usepackage{algpseudocode}
+	% include theorem typesetting
+		\usepackage{amsthm}
+	% include graphics
+		\usepackage{tikz}
+	% extra symbols like \llbracket
+		\usepackage{stmaryrd}
+
+	% theorems
+		\newtheorem{definition}{Definition}
+		\newtheorem{theorem}{Theorem}
+		\newtheorem{corollary}[theorem]{Corollary}
+		\newtheorem{lemma}[theorem]{Lemma}
+		\newtheorem{proposition}[theorem]{Proposition}
+		\newtheorem{claim}{Claim}
+		\newtheorem{conjecture}[theorem]{Conjecture}
+
+	% group theory commands
+		\newcommand{\unlhdneq}{\mathrel{\ooalign{$\lneq$\cr\raise.22ex\hbox{$\lhd$}\cr}}}
+		\newcommand{\rhdneq}{\mathrel{\ooalign{$\gneq$\cr\raise.22ex\hbox{$\rhd$}\cr}}}
+
+	% math operators
+		\DeclareMathOperator{\lcm}{lcm}
+
+	% complexity classes
+		\DeclareMathOperator{\NP}{NP}
+		\DeclareMathOperator{\PP}{PP}
+% }}}
 endsnippet
-# }}}
 
-
-snippet cmds "commands" b
-\newcommand{\unlhdneq}{\mathrel{\ooalign{$\lneq$\cr\raise.22ex\hbox{$\lhd$}\cr}}}
-\newcommand{\rhdneq}{\mathrel{\ooalign{$\gneq$\cr\raise.22ex\hbox{$\rhd$}\cr}}}
-endsnippet
-
-snippet thrms "theorems" b
-\newtheorem{theorem}{Theorem}
-\newtheorem{corollary}[theorem]{Corollary}
-endsnippet
-
-snippet body "basic body" b
+snippet body "Body" b
+\title{$1}
+\author{Lucas S. Stinchcombe$^{1}$ \\\\
+	\small $^{1}$School of Computing Science, Simon Fraser University, Canada}
+\date{\today}
 \begin{document}
 \maketitle
 \section{Introduction}
 \end{document}
 endsnippet
 
-snippet title "title" b
-\title{$1}
-\author{Lucas S. Stinchcombe$^{1}$ \\\\
-	\small $^{1}$School of Computing Science, Simon Fraser University, Canada}
-\date{\today}
-endsnippet
-
 snippet cmd "new command" b
 \newcommand\\$1[$2]{${0:${VISUAL}}}
 endsnippet
 
-
-# Environments {{{
-snippet begin "begin{}/end{}" bi
-\begin{$1}$2
-	${0:${VISUAL}}
-\end{$1}
+# Theorems {{{
+snippet theorem "Theorem" bi
+\begin{theorem}
+    ${0:${VISUAL}}
+\end{theorem}
+endsnippet
+snippet thrm "Theorem" bi
+\begin{theorem}
+    ${0:${VISUAL}}
+\end{theorem}
+endsnippet
+snippet proposition "Proposition" bi
+\begin{proposition}
+    ${0:${VISUAL}}
+\end{proposition}
+endsnippet
+snippet prop "Proposition" bi
+\begin{proposition}
+    ${0:${VISUAL}}
+\end{proposition}
+endsnippet
+snippet corollary "Corollary" bi
+\begin{corollary}
+    ${0:${VISUAL}}
+\end{corollary}
+endsnippet
+snippet lemma "Lemma" bi
+\begin{lemma}
+    ${0:${VISUAL}}
+\end{lemma}
+endsnippet
+snippet claim "Claim" bi
+\begin{claim}
+    ${0:${VISUAL}}
+\end{claim}
 endsnippet
 snippet proof "Proof" bi
+\begin{proof}
+    ${0:${VISUAL}}
+\end{proof}
+endsnippet
+snippet pf "Proof" bi
 \begin{proof}
     ${0:${VISUAL}}
 \end{proof}
@@ -71,10 +115,36 @@ snippet solution "Solution" bi
     ${0:${VISUAL}}
 \end{proof}
 endsnippet
-snippet claim "Claim" bi
-\begin{claim}
+snippet soln "Solution" bi
+\begin{proof}[Solution]
     ${0:${VISUAL}}
-\end{claim}
+\end{proof}
+endsnippet
+# }}}
+
+# References {{{
+snippet cite "Citation"
+\cite{${0:${VISUAL}}}
+endsnippet
+snippet nocite "No Citation"
+\nocite{${0:${VISUAL}}}
+endsnippet
+snippet ref "ref" bi
+~\ref{${0:${VISUAL}}}
+endsnippet
+snippet eqref "eqref" bi
+~\eqref{${0:${VISUAL}}}
+endsnippet
+# }}}
+
+# Environments {{{
+snippet begin "begin{}/end{}" bi
+\begin{$1}$2
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+snippet section "section" bi
+\section{${1:${VISUAL}}}$0
 endsnippet
 snippet align "Align*" bi
 \begin{align*}
@@ -86,35 +156,33 @@ snippet itemize "Itemize" bi
     ${0:${VISUAL}}
 \end{itemize}
 endsnippet
-snippet labelalph "Label alph" i
-label=(\alph*)
-endsnippet
-snippet eqref "eqref" bi
-~\eqref{${0:${VISUAL}}}
-endsnippet
-snippet ref "ref" bi
-~\ref{${0:${VISUAL}}}
-endsnippet
-snippet section "section" bi
-\section{${1:${VISUAL}}}$0
+snippet figure "Figure" bi
+\begin{figure}
+	\caption{$0}
+	${0:${VISUAL}}
+\end{figure}
 endsnippet
 # }}}
 
 # Math Miscellaneous {{{
-snippet inmath "Math Context" w
+snippet inmath "Inline Math Context" w
 $${1:${VISUAL}}$$0
 endsnippet
-snippet inm "Math Context" w
+snippet inm "Inline Math Context" w
 $${1:${VISUAL}}$$0
+endsnippet
+snippet dmath "Display Math Context" w
+\[
+	${1:${VISUAL}}
+\]$0
+endsnippet
+snippet dm "Display Math Context" w
+\[
+	${1:${VISUAL}}
+\]$0
 endsnippet
 snippet abs "Absolute value" w
 \lvert ${1:${VISUAL}} \rvert $0
-endsnippet
-snippet bf "Bold" wi
-{\bf ${1:${VISUAL}}}$0
-endsnippet
-snippet it "Italics" wi
-{\it ${1:${VISUAL}}}$0
 endsnippet
 snippet circ "Circle" w
 \circ 
@@ -179,24 +247,6 @@ endsnippet
 # }}}
 
 
-# Various well-known sets {{{
-snippet reals "Reals" w
-\mathbb{R}
-endsnippet
-snippet nats "Naturals" w
-\mathbb{N}
-endsnippet
-snippet ints "Integers" w
-\mathbb{Z}
-endsnippet
-snippet rats "Rationals" w
-\mathbb{Q}
-endsnippet
-snippet complex "Complex" w
-\mathbb{C}
-endsnippet
-# }}}
-
 snippet "{}" "Braces" r
 {${1:${VISUAL}}}$0
 endsnippet
@@ -221,6 +271,9 @@ snippet eq "equal" w
 = 
 endsnippet
 snippet neq "not equal" w
+\neq 
+endsnippet
+snippet != "not equal" w
 \neq 
 endsnippet
 snippet cong "congruent" w
@@ -277,6 +330,9 @@ endsnippet
 snippet sum "summation" w
 \sum_{${1:${VISUAL}}}$0
 endsnippet
+snippet prod "product" w
+\prod_{${1:${VISUAL}}}$0
+endsnippet
 snippet bigoplus "big oplus" w
 \bigoplus_{${1:${VISUAL}}}$0
 endsnippet
@@ -321,6 +377,9 @@ snippet tensor "tensor product" w
 endsnippet
 snippet dim "dimension" w
 \dim 
+endsnippet
+snippet vec "vector" w
+\vec{${1:${VISUAL}}}$0
 endsnippet
 # }}}
 
@@ -382,10 +441,22 @@ endsnippet
 snippet <- "left arrow" wi
 \leftarrow 
 endsnippet
+snippet longrightarrow "long right arrow" wi
+\longrightarrow 
+endsnippet
+snippet --> "long right arrow" wi
+\longrightarrow 
+endsnippet
+snippet longleftarrow "long left arrow" wi
+\longleftarrow 
+endsnippet
+snippet <-- "long left arrow" wi
+\longleftarrow 
+endsnippet
 snippet leftrightarrow "left right arrow" wi
 \leftrightarrow 
 endsnippet
-snippet <-> "left right arrow" wi
+snippet <-> "left left arrow" wi
 \leftrightarrow 
 endsnippet
 snippet mapsto "maps to" w
@@ -603,13 +674,44 @@ endsnippet
 snippet mathcal "math cal" w
 \mathcal{${1:${VISUAL}}}$0
 endsnippet
-snippet textbf "boldface text" w
+snippet textbf "Boldface Text" w
 \textbf{${1:${VISUAL}}}$0
 endsnippet
-snippet textit "italics text" w
+snippet bf "Boldface Text" w
+\textbf{${1:${VISUAL}}}$0
+endsnippet
+snippet bold "Boldface Text" w
+\textbf{${1:${VISUAL}}}$0
+endsnippet
+snippet textit "Italics Text" w
 \textit{${1:${VISUAL}}}$0
 endsnippet
+snippet it "Italics Text" w
+\textit{${1:${VISUAL}}}$0
+endsnippet
+snippet ul "Underline Text" w
+\underline{${1:${VISUAL}}}$0
+endsnippet
+snippet color "Text Color" w
+\textcolor{$2}{${1:${VISUAL}}}$3
+endsnippet
+snippet xxxsmall "Extra Extra Extra Small Text" w
+{\tiny ${1:${VISUAL}}} $0
+endsnippet
+snippet xxsmall "Extra Extra Small Text" w
+{\scriptsize ${1:${VISUAL}}} $0
+endsnippet
+snippet xsmall "Extra Small Text" w
+{\footnotesize ${1:${VISUAL}}} $0
+endsnippet
+snippet small "Small Text" w
+{\small ${1:${VISUAL}}} $0
+endsnippet
+snippet skip "Medium Skip" w
+\medskip
+endsnippet
 # }}}
+
 
 # Accents {{{
 snippet umlat "umlat" w
