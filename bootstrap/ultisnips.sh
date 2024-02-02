@@ -9,7 +9,7 @@ rc_install()
     then
         echo "Skip"
     else
-        ln -s "$RC_FILES_DIR/UltiSnips" "$HOME/.vim/UltiSnips"
+        ln -s "$RC_ROOT_DIR/UltiSnips" "$HOME/.vim/UltiSnips"
         echo "Done"
     fi
 }
