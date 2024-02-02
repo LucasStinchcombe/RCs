@@ -2,52 +2,6 @@
 # for documentation. In particular "4.1.3 Snippet Options"
 priority 10
 
-# Preamble {{{
-snippet preamble "preamble" b
-% Preamble {{{
-	\documentclass[12pt]{article}
-	\usepackage[a4paper, margin=0.75in]{geometry}
-
-	% include align, etc
-		\usepackage{amsmath}
-		\usepackage{amssymb}
-	% include hyperlinks
-		\usepackage{hyperref}
-	% include mathbb, etc
-		\usepackage{amsfonts}
-	% self explanatory
-		\usepackage{braket}
-	% include packages for algorithm writing
-		\usepackage{algorithm}
-		\usepackage{algpseudocode}
-	% include theorem typesetting
-		\usepackage{amsthm}
-	% include graphics
-		\usepackage{tikz}
-	% extra symbols like \llbracket
-		\usepackage{stmaryrd}
-
-	% theorems
-		\newtheorem{definition}{Definition}
-		\newtheorem{theorem}{Theorem}
-		\newtheorem{corollary}[theorem]{Corollary}
-		\newtheorem{lemma}[theorem]{Lemma}
-		\newtheorem{proposition}[theorem]{Proposition}
-		\newtheorem{claim}{Claim}
-		\newtheorem{conjecture}[theorem]{Conjecture}
-
-	% group theory commands
-		\newcommand{\unlhdneq}{\mathrel{\ooalign{$\lneq$\cr\raise.22ex\hbox{$\lhd$}\cr}}}
-		\newcommand{\rhdneq}{\mathrel{\ooalign{$\gneq$\cr\raise.22ex\hbox{$\rhd$}\cr}}}
-
-	% math operators
-		\DeclareMathOperator{\lcm}{lcm}
-
-	% complexity classes
-		\DeclareMathOperator{\NP}{NP}
-		\DeclareMathOperator{\PP}{PP}
-% }}}
-endsnippet
 
 snippet body "Body" b
 \title{$1}
@@ -338,27 +292,6 @@ snippet bigoplus "big oplus" w
 endsnippet
 # }}}
 
-# First Order Logical Operators {{{
-snippet forall "universal quantifier" w
-\forall 
-endsnippet
-snippet exists "existential quantifier" w
-\exists 
-endsnippet
-snippet nexists "negated existential quantifier" w
-\nexists 
-endsnippet
-snippet implies "implies" w
-\implies 
-endsnippet
-snippet iff "iff" w
-\iff 
-endsnippet
-snippet neg "negation" w
-\neg 
-endsnippet
-# }}}
-
 # Category Theory {{{
 snippet ker "kernel" w
 \ker 
@@ -369,134 +302,30 @@ endsnippet
 # }}}
 
 # Linear Algebra {{{
-snippet compl "orthogonal complement" w
+snippet compl "Orthogonal Complement" w
 \bot 
 endsnippet
-snippet tensor "tensor product" w
+snippet tensor "Tensor Product" w
 \otimes 
 endsnippet
-snippet dim "dimension" w
+snippet dim "Dimension" w
 \dim 
 endsnippet
-snippet vec "vector" w
+snippet vec "Vector" w
 \vec{${1:${VISUAL}}}$0
 endsnippet
-# }}}
-
-# Set Theory {{{
-snippet emptyset "empty set" w
-\emptyset 
+snippet matrix "Matrix" w
+\begin{matrix}
+    ${0:${VISUAL}}
+\end{matrix}
 endsnippet
-snippet setminus "Set minus" w
-\setminus 
-endsnippet
-snippet subset "subset" w
-\subseteq 
-endsnippet
-snippet neqsubset "strict subset" w
-\subsetneq 
-endsnippet
-snippet nsubset "not subset" w
-\nsubseteq 
-endsnippet
-snippet supset "superset" w
-\supseteq 
-endsnippet
-snippet neqsupset "superset" w
-\supsetneq 
-endsnippet
-snippet nsupset "superset" w
-\nsupseteq 
-endsnippet
-snippet cap "cap" w
-\cap 
-endsnippet
-snippet cup "cup" w
-\cup 
-endsnippet
-snippet bigcap "big cap" w
-\bigcap 
-endsnippet
-snippet bigcup "big cup" w
-\bigcup 
-endsnippet
-snippet inn "membership" w
-\in 
-endsnippet
-snippet notin "not membership" w
-\notin 
-endsnippet
-# }}}
-
-# Function Symbols {{{
-snippet rightarrow "right arrow" wi
-\rightarrow 
-endsnippet
-snippet -> "right arrow" wi
-\rightarrow 
-endsnippet
-snippet leftarrow "left arrow" wi
-\leftarrow 
-endsnippet
-snippet <- "left arrow" wi
-\leftarrow 
-endsnippet
-snippet longrightarrow "long right arrow" wi
-\longrightarrow 
-endsnippet
-snippet --> "long right arrow" wi
-\longrightarrow 
-endsnippet
-snippet longleftarrow "long left arrow" wi
-\longleftarrow 
-endsnippet
-snippet <-- "long left arrow" wi
-\longleftarrow 
-endsnippet
-snippet leftrightarrow "left right arrow" wi
-\leftrightarrow 
-endsnippet
-snippet <-> "left left arrow" wi
-\leftrightarrow 
-endsnippet
-snippet mapsto "maps to" w
-\mapsto 
-endsnippet
-snippet |-> "maps to" w
-\mapsto 
+snippet braket "Braket" w
+\braket{$1}{$2} $3
 endsnippet
 # }}}
 
 
-# Group Theory {{{
-snippet <| "left normal subgroup" w
-\unlhd 
-endsnippet
-snippet subgroup "left normal subgroup" w
-\unlhd 
-endsnippet
-snippet neq<| "strict left normal subgroup" w
-\unlhdneq 
-endsnippet
-snippet neqsubgroup "strict left normal subgroup" w
-\unlhdneq 
-endsnippet
-snippet |> "right normal subgroup" w
-\rhd 
-endsnippet
-snippet supgroup "right normal subgroup" w
-\rhd 
-endsnippet
-snippet neq|> "strict right normal subgroup" w
-\rhdneq 
-endsnippet
-snippet neqsupgroup "strict right normal subgroup" w
-\rhdneq 
-endsnippet
-snippet x| "semidirect product" w
-\rtimes 
-endsnippet
-# }}}
+
 
 
 # Quantum Theory {{{
@@ -508,153 +337,6 @@ snippet ket "Ket" w
 endsnippet
 snippet dagger "Dagger" w
 \dagger 
-endsnippet
-# }}}
-
-# Greek letters {{{
-snippet alpha "alpha" w
-\alpha 
-endsnippet
-snippet beta "beta" w
-\beta 
-endsnippet
-snippet gamma "gamma" w
-\gamma 
-endsnippet
-snippet delta "delta" w
-\delta 
-endsnippet
-snippet epsilon "epsilon" w
-\epsilon 
-endsnippet
-snippet zeta "zeta" w
-\zeta 
-endsnippet
-snippet eta "eta" w
-\eta 
-endsnippet
-snippet theta "theta" w
-\theta 
-endsnippet
-snippet iota "iota" w
-\iota 
-endsnippet
-snippet kappa "kappa" w
-\kappa 
-endsnippet
-snippet lambda "lamdba" w
-\lambda 
-endsnippet
-snippet mu "mu" w
-\mu 
-endsnippet
-snippet nu "nu" w
-\nu 
-endsnippet
-snippet xi "xi" w
-\xi 
-endsnippet
-snippet omicron "omicron" w
-o 
-endsnippet
-snippet pi "pi" w
-\pi 
-endsnippet
-snippet rho "rho" w
-\rho 
-endsnippet
-snippet sigma "sigma" w
-\sigma 
-endsnippet
-snippet tau "tau" w
-\tau 
-endsnippet
-snippet upsilon "upsilon" w
-\upsilon 
-endsnippet
-snippet phi "phi" w
-\phi 
-endsnippet
-snippet chi "chi" w
-\chi 
-endsnippet
-snippet psi "psi" w
-\psi 
-endsnippet
-snippet omega "omega" w
-\omega 
-endsnippet
-snippet Alpha "Alpha" w
-A 
-endsnippet
-snippet Beta "Beta" w
-B 
-endsnippet
-snippet Gamma "Gamma" w
-\Gamma 
-endsnippet
-snippet Delta "Delta" w
-\Delta 
-endsnippet
-snippet Epsilon "Epsilon" w
-E 
-endsnippet
-snippet Zeta "Zeta" w
-Z 
-endsnippet
-snippet Eta "Eta" w
-H 
-endsnippet
-snippet Theta "Theta" w
-\Theta 
-endsnippet
-snippet Iota "Iota" w
-I 
-endsnippet
-snippet Kappa "Kappa" w
-K 
-endsnippet
-snippet Lambda "Lamdba" w
-\Lambda 
-endsnippet
-snippet Mu "Mu" w
-M 
-endsnippet
-snippet Nu "Nu" w
-N 
-endsnippet
-snippet Xi "Xi" w
-\Xi 
-endsnippet
-snippet Omicron "Omicron" w
-O 
-endsnippet
-snippet Pi "Pi" w
-\Pi 
-endsnippet
-snippet Rho "Rho" w
-P 
-endsnippet
-snippet Sigma "Sigma" w
-\Sigma 
-endsnippet
-snippet Tau "Tau" w
-T 
-endsnippet
-snippet Upsilon "Upsilon" w
-\Upsilon 
-endsnippet
-snippet Phi "Phi" w
-\Phi 
-endsnippet
-snippet Chi "Chi" w
-X 
-endsnippet
-snippet Psi "Psi" w
-\Psi 
-endsnippet
-snippet Omega "Omega" w
-\Omega 
 endsnippet
 # }}}
 
@@ -711,7 +393,6 @@ snippet skip "Medium Skip" w
 \medskip
 endsnippet
 # }}}
-
 
 # Accents {{{
 snippet umlat "umlat" w

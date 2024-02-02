@@ -1,0 +1,68 @@
+priority 10
+
+# Preamble {{{
+snippet preamble "preamble" b
+% Preamble {{{
+	\documentclass[12pt]{article}
+	\usepackage[a4paper, margin=0.75in]{geometry}
+
+	% include align, etc
+		\usepackage{amsmath}
+		\usepackage{amssymb}
+	% include hyperlinks
+		\usepackage{hyperref}
+	% include mathbb, etc
+		\usepackage{amsfonts}
+	% self explanatory
+		\usepackage{braket}
+	% include packages for algorithm writing
+		\usepackage{algorithm}
+		\usepackage{algpseudocode}
+	% include theorem typesetting
+		\usepackage{amsthm}
+	% include graphics
+		\usepackage{tikz}
+	% extra symbols like \llbracket
+		\usepackage{stmaryrd}
+	% xspace and colors
+		\usepackage{xspace,color}
+
+	% theorems
+		\newtheorem{definition}{Definition}
+		\newtheorem{theorem}{Theorem}
+		\newtheorem{corollary}[theorem]{Corollary}
+		\newtheorem{lemma}[theorem]{Lemma}
+		\newtheorem{proposition}[theorem]{Proposition}
+		\newtheorem{claim}{Claim}
+		\newtheorem{conjecture}[theorem]{Conjecture}
+
+	% group theory commands
+		\newcommand{\unlhdneq}{\mathrel{\ooalign{$\lneq$\cr\raise.22ex\hbox{$\lhd$}\cr}}}
+		\newcommand{\rhdneq}{\mathrel{\ooalign{$\gneq$\cr\raise.22ex\hbox{$\rhd$}\cr}}}
+
+	% math operators
+		\DeclareMathOperator{\lcm}{lcm}
+
+	% complexity classes
+		\DeclareMathOperator{\NP}{NP}
+		\DeclareMathOperator{\PP}{PP}
+
+		\DeclareMathOperator{\BQP}{BQP}
+		\DeclareMathOperator{\NQP}{NQP}
+
+	% editing
+	\newcommand{\NOTE}[1]{
+		\noindent{\color{red} #1}
+	}
+	\newcommand{\TODO}[1]{\marginpar{\scriptsize
+		\begin{color}{blue}
+			\textbf{TODO:} #1
+		\end{color}\xspace
+	}}
+	\newcommand{\CHECK}[1]{\marginpar{\scriptsize
+		\begin{color}{red}
+			\textbf{CHECK:} #1
+		\end{color}
+	}}
+% }}}
+endsnippet
