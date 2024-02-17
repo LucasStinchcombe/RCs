@@ -1,11 +1,10 @@
 priority 10
 
-# Preamble {{{
-snippet preamble "preamble" b
+snippet header "Header"  b
+	\documentclass{article}
+endsnippet
+snippet preamble "Preamble" b
 % Preamble {{{
-	\documentclass[12pt]{article}
-	\usepackage[a4paper, margin=0.75in]{geometry}
-
 	% include align, etc
 		\usepackage{amsmath}
 		\usepackage{amssymb}
@@ -26,6 +25,8 @@ snippet preamble "preamble" b
 		\usepackage{stmaryrd}
 	% xspace and colors
 		\usepackage{xspace,color}
+	% enumeration labels
+		\usepackage{enumitem}
 
 	% theorems
 		\newtheorem{definition}{Definition}
@@ -52,7 +53,9 @@ snippet preamble "preamble" b
 
 	% editing
 	\newcommand{\NOTE}[1]{
-		\noindent{\color{red} #1}
+		\begin{color}{red}
+			\textbf{NOTE:} #1
+		\end{color}
 	}
 	\newcommand{\TODO}[1]{\marginpar{\scriptsize
 		\begin{color}{blue}
@@ -60,7 +63,7 @@ snippet preamble "preamble" b
 		\end{color}\xspace
 	}}
 	\newcommand{\CHECK}[1]{\marginpar{\scriptsize
-		\begin{color}{red}
+		\begin{color}{purple}
 			\textbf{CHECK:} #1
 		\end{color}
 	}}

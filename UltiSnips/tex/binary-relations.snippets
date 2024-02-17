@@ -1,32 +1,38 @@
 priority 12
 
 # Binary Operators {{{
-snippet eq "equal" w
+snippet eq "Equal" w
 = 
 endsnippet
-snippet neq "not equal" w
+snippet neq "Not Equal" w
 \neq 
 endsnippet
-snippet != "not equal" w
+snippet != "Not Equal" w
 \neq 
 endsnippet
-snippet cong "congruent" w
+snippet cong "Congruent" w
 \cong 
 endsnippet
-snippet ncong "not congruent" w
+snippet ncong "Not Congruent" w
 \ncong 
 endsnippet
-snippet iso "isomorphic" w
+snippet iso "Isomorphic" w
 \cong 
 endsnippet
-snippet niso "not isomorphic" w
+snippet niso "Not Isomorphic" w
 \ncong 
 endsnippet
-snippet equiv "equivalent" w
+snippet equiv "Equivalent" w
 \equiv 
 endsnippet
-snippet nequiv "equivalent" w
+snippet nequiv "Equivalent" w
 \not\equiv 
+endsnippet
+snippet similar "Similar"  w
+\sim 
+endsnippet
+snippet sim "Similar"  w
+\sim 
 endsnippet
 snippet geq "greater than or equal" w
 \geq 
@@ -61,5 +67,7 @@ endsnippet
 snippet stack "Relation Label" w
 \stackrel{$2}{${1:${VISUAL}}} $0
 endsnippet
+snippet under "Underset Relation Label" w
+\underset{$2}{${1:${VISUAL}}} $0
+endsnippet
 # }}}
-

@@ -1,0 +1,26 @@
+priority 10
+
+# TODO Consider using Cleverref https://texblog.org/2013/05/06/cleveref-a-clever-way-to-reference-in-latex/
+
+# References {{{
+snippet cite "Citation"
+\cite{${0:${VISUAL}}}
+endsnippet
+snippet nocite "No Citation"
+\nocite{${0:${VISUAL}}}
+endsnippet
+snippet label "Label" i
+~\label{${0:${VISUAL}}}
+endsnippet
+snippet ref "Reference" i
+~\ref{${0:${VISUAL}}}
+endsnippet
+snippet pageref "Page Reference" i
+~\pageref{${0:${VISUAL}}}
+endsnippet
+
+priority 12
+snippet eqref "Equation Reference" i
+~\eqref{${0:${VISUAL}}}
+endsnippet
+# }}}

@@ -18,78 +18,7 @@ snippet cmd "new command" b
 \newcommand\\$1[$2]{${0:${VISUAL}}}
 endsnippet
 
-# Theorems {{{
-snippet theorem "Theorem" bi
-\begin{theorem}
-    ${0:${VISUAL}}
-\end{theorem}
-endsnippet
-snippet thrm "Theorem" bi
-\begin{theorem}
-    ${0:${VISUAL}}
-\end{theorem}
-endsnippet
-snippet proposition "Proposition" bi
-\begin{proposition}
-    ${0:${VISUAL}}
-\end{proposition}
-endsnippet
-snippet prop "Proposition" bi
-\begin{proposition}
-    ${0:${VISUAL}}
-\end{proposition}
-endsnippet
-snippet corollary "Corollary" bi
-\begin{corollary}
-    ${0:${VISUAL}}
-\end{corollary}
-endsnippet
-snippet lemma "Lemma" bi
-\begin{lemma}
-    ${0:${VISUAL}}
-\end{lemma}
-endsnippet
-snippet claim "Claim" bi
-\begin{claim}
-    ${0:${VISUAL}}
-\end{claim}
-endsnippet
-snippet proof "Proof" bi
-\begin{proof}
-    ${0:${VISUAL}}
-\end{proof}
-endsnippet
-snippet pf "Proof" bi
-\begin{proof}
-    ${0:${VISUAL}}
-\end{proof}
-endsnippet
-snippet solution "Solution" bi
-\begin{proof}[Solution]
-    ${0:${VISUAL}}
-\end{proof}
-endsnippet
-snippet soln "Solution" bi
-\begin{proof}[Solution]
-    ${0:${VISUAL}}
-\end{proof}
-endsnippet
-# }}}
 
-# References {{{
-snippet cite "Citation"
-\cite{${0:${VISUAL}}}
-endsnippet
-snippet nocite "No Citation"
-\nocite{${0:${VISUAL}}}
-endsnippet
-snippet ref "ref" bi
-~\ref{${0:${VISUAL}}}
-endsnippet
-snippet eqref "eqref" bi
-~\eqref{${0:${VISUAL}}}
-endsnippet
-# }}}
 
 # Environments {{{
 snippet begin "begin{}/end{}" bi
@@ -97,8 +26,11 @@ snippet begin "begin{}/end{}" bi
 	${0:${VISUAL}}
 \end{$1}
 endsnippet
-snippet section "section" bi
+snippet section "Section" bi
 \section{${1:${VISUAL}}}$0
+endsnippet
+snippet subsection "Subsection" bi
+\subsection{${1:${VISUAL}}}$0
 endsnippet
 snippet align "Align*" bi
 \begin{align*}
@@ -181,6 +113,9 @@ snippet ll "subscript" i
 _{$1}$0
 endsnippet
 snippet widehat "Wide Hat" w
+\widehat{${1:${VISUAL}}} $0
+endsnippet
+snippet hhat "Wide Hat" w
 \widehat{${1:${VISUAL}}} $0
 endsnippet
 snippet cdot "cdot" w
@@ -295,6 +230,12 @@ endsnippet
 snippet mathcal "math cal" w
 \mathcal{${1:${VISUAL}}}$0
 endsnippet
+snippet mathfrak "math frak" w
+\mathfrak{${1:${VISUAL}}}$0
+endsnippet
+snippet frak "math frak" w
+\mathfrak{${1:${VISUAL}}}$0
+endsnippet
 snippet textbf "Boldface Text" w
 \textbf{${1:${VISUAL}}}$0
 endsnippet
@@ -316,6 +257,8 @@ endsnippet
 snippet color "Text Color" w
 \textcolor{$2}{${1:${VISUAL}}}$3
 endsnippet
+
+priority 12
 snippet xxxsmall "Extra Extra Extra Small Text" w
 {\tiny ${1:${VISUAL}}} $0
 endsnippet
@@ -328,6 +271,8 @@ endsnippet
 snippet small "Small Text" w
 {\small ${1:${VISUAL}}} $0
 endsnippet
+ 
+priority 10
 snippet skip "Medium Skip" w
 \medskip
 endsnippet
