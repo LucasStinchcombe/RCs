@@ -1,0 +1,45 @@
+priority 12
+
+snippet bool "Boolean Variable" w
+\bool{${1:${VISUAL}}} $0
+endsnippet
+snippet bbb "Boolean Variable" wA
+\bool{${1:${VISUAL}}} $0
+endsnippet
+snippet var "Variable" w
+\var{${1:${VISUAL}}} $0
+endsnippet
+snippet vvv "Variable" wA
+\var{${1:${VISUAL}}} $0
+endsnippet
+snippet euler "Phase Polynomial" w
+\euler{
+	${1:${VISUAL}}
+} $0
+endsnippet
+snippet euler( "Phase Polynomial With Parenthesis" w
+\euler{(
+	${1:${VISUAL}}
+)} $0
+endsnippet
+snippet state "State" w
+\ket{O_{A}}\bra{I_{A}}
+endsnippet
+snippet zerostate "State" w
+\ket{0, \ldots, 0}\bra{0, \ldots, 0}
+endsnippet
+snippet par "Parentheses" w
+(${1:${VISUAL}}) $0
+endsnippet
+snippet brac "Braces" w
+\\{${1:${VISUAL}}\\} $0
+endsnippet
+snippet brak "Brackets" iw
+[${1:${VISUAL}}] $0
+endsnippet
+snippet rewrite "Rewrite" w
+\rewrite
+endsnippet
+snippet pfcase "Proof Case"  b
+\pfcase{$2}{${1:${VISUAL}}} $0
+endsnippet
