@@ -1,0 +1,50 @@
+
+# Matrix Notation {{{
+snippet matrix "Matrix" w
+\begin{${1}matrix}
+    ${0:${VISUAL}}
+\end{${1}matrix}
+endsnippet
+snippet vec "Vector" w
+\vec{${1:${VISUAL}}}$0
+endsnippet
+# }}}
+
+# Dirac Notation {{{
+snippet bra "Bra" w
+\bra{${1:${VISUAL}}} $0
+endsnippet
+snippet ket "Ket" w
+\ket{${1:${VISUAL}}} $0
+endsnippet
+snippet braket "Bra-Ket" w
+\braket{$1}{$2} $3
+endsnippet
+snippet ketbra "Ket-Bra" w
+\braket{$1}{$2} $3
+endsnippet
+# }}}
+
+# Vectorspace Operations {{{
+snippet compl "Orthogonal Complement" w
+\bot 
+endsnippet
+snippet tensor "Tensor Product" w
+\otimes 
+endsnippet
+snippet dim "Dimension" w
+\dim 
+endsnippet
+snippet ker "kernel" w
+\ker 
+endsnippet
+# }}}
+
+# Matrix/Vector Operations {{{
+snippet dagger "Dagger" w
+\dagger 
+endsnippet
+snippet norm "Norm" w
+\lVert ${1:${VISUAL}} \rVert $0
+endsnippet
+# }}}

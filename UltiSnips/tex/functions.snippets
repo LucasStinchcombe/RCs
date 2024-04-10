@@ -1,41 +1,65 @@
 priority 10
 
 # Function Symbols {{{
-snippet rightarrow "right arrow" wi
+snippet rightarrow "Right Arrow" wi
 \rightarrow 
 endsnippet
-snippet -> "right arrow" wi
+snippet -> "Right Arrow" wi
 \rightarrow 
 endsnippet
-snippet leftarrow "left arrow" wi
+snippet leftarrow "Left Arrow" wi
 \leftarrow 
 endsnippet
-snippet <- "left arrow" wi
+snippet <- "Left Arrow" wi
 \leftarrow 
 endsnippet
-snippet longrightarrow "long right arrow" wi
+snippet longrightarrow "Long Right Arrow" wi
 \longrightarrow 
 endsnippet
-snippet --> "long right arrow" wi
+snippet --> "Long Right Arrow" wi
 \longrightarrow 
 endsnippet
-snippet longleftarrow "long left arrow" wi
+snippet longleftarrow "Long Left Arrow" wi
 \longleftarrow 
 endsnippet
-snippet <-- "long left arrow" wi
+snippet <-- "Long Left Arrow" wi
 \longleftarrow 
 endsnippet
-snippet leftrightarrow "left right arrow" wi
+snippet leftrightarrow "Left Right Arrow" wi
 \leftrightarrow 
 endsnippet
-snippet <-> "left left arrow" wi
+snippet <-> "Left Left Arrow" wi
 \leftrightarrow 
 endsnippet
-snippet mapsto "maps to" w
+snippet mapsto "Maps To" w
 \mapsto 
 endsnippet
-snippet |-> "maps to" w
+snippet |-> "Maps To" w
 \mapsto 
+endsnippet
+snippet compose "Composition" w
+\circ 
+endsnippet
+snippet circ "Composition" w
+\circ 
 endsnippet
 # }}}
 
+
+# Trigonometric Functions {{{
+snippet sin "Sine" w
+\sin 
+endsnippet
+snippet cos "Cosine" w
+\cos 
+endsnippet
+# }}}
+
+# Elementary Functions {{{
+snippet abs "Absolute value" w
+\lvert ${1:${VISUAL}} \rvert $0
+endsnippet
+snippet sqrt "Square Root" w
+\sqrt{${1:${VISUAL}}}$0
+endsnippet
+# }}}

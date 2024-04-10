@@ -18,6 +18,10 @@ snippet cmd "new command" b
 \newcommand\\$1[$2]{${0:${VISUAL}}}
 endsnippet
 
+snippet del "partial derivative"  w
+\partial
+endsnippet
+
 
 
 # Environments {{{
@@ -63,41 +67,23 @@ snippet inm "Inline Math Context" w
 $${1:${VISUAL}}$$0
 endsnippet
 snippet dmath "Display Math Context" w
-\[
-	${1:${VISUAL}}
-\]$0
+\begin{align*}
+    ${0:${VISUAL}}
+\end{align*}
 endsnippet
 snippet dm "Display Math Context" w
-\[
-	${1:${VISUAL}}
-\]$0
-endsnippet
-snippet abs "Absolute value" w
-\lvert ${1:${VISUAL}} \rvert $0
-endsnippet
-snippet circ "Circle" w
-\circ 
-endsnippet
-snippet cos "Cosine" w
-\cos 
+\begin{align*}
+    ${0:${VISUAL}}
+\end{align*}
 endsnippet
 snippet hat "Hat" w
 \hat{${1:${VISUAL}}} $0
-endsnippet
-snippet norm "Norm" w
-\lVert ${1:${VISUAL}} \rVert $0
 endsnippet
 snippet overline "Overline" w
 \overline{${1:${VISUAL}}} $0
 endsnippet
 snippet proves "Proves" wi
 \vdash 
-endsnippet
-snippet sin "Sine" w
-\sin 
-endsnippet
-snippet sqrt "Square Root" w
-\sqrt{${1:${VISUAL}}}$0
 endsnippet
 snippet st "Such that"
 \, \mid \,
@@ -172,52 +158,11 @@ endsnippet
 # }}}
 
 # Category Theory {{{
-snippet ker "kernel" w
-\ker 
-endsnippet
 snippet overset "overset" w
 \overset{$1}{${0:${VISUAL}}}$2
 endsnippet
 # }}}
 
-# Linear Algebra {{{
-snippet compl "Orthogonal Complement" w
-\bot 
-endsnippet
-snippet tensor "Tensor Product" w
-\otimes 
-endsnippet
-snippet dim "Dimension" w
-\dim 
-endsnippet
-snippet vec "Vector" w
-\vec{${1:${VISUAL}}}$0
-endsnippet
-snippet matrix "Matrix" w
-\begin{matrix}
-    ${0:${VISUAL}}
-\end{matrix}
-endsnippet
-snippet braket "Braket" w
-\braket{$1}{$2} $3
-endsnippet
-# }}}
-
-
-
-
-
-# Quantum Theory {{{
-snippet bra "Bra" w
-\bra{${1:${VISUAL}}} $0
-endsnippet
-snippet ket "Ket" w
-\ket{${1:${VISUAL}}} $0
-endsnippet
-snippet dagger "Dagger" w
-\dagger 
-endsnippet
-# }}}
 
 # Fonts {{{
 snippet bb "math bb" w
