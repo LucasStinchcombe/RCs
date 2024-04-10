@@ -27,6 +27,10 @@ snippet preamble "Preamble" b
 		\usepackage{xspace,color}
 	% enumeration labels
 		\usepackage{enumitem}
+	% scaling symbol sizes
+		\usepackage{scalerel}
+	% quantikz
+		\usepackage{quantikz}
 
 	% theorems
 		\newtheorem{definition}{Definition}
@@ -43,6 +47,7 @@ snippet preamble "Preamble" b
 
 	% math operators
 		\DeclareMathOperator{\lcm}{lcm}
+		\DeclareMathOperator*{\bigplus}{\scalerel*{+}{\sum}}
 
 	% complexity classes
 		\let\P\undefined
