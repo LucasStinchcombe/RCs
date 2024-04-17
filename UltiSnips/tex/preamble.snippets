@@ -39,6 +39,7 @@ snippet preamble "Preamble" b
 		\newtheorem{lemma}[theorem]{Lemma}
 		\newtheorem{proposition}[theorem]{Proposition}
 		\newtheorem{claim}{Claim}
+		\newtheorem{example}[theorem]{Example}
 		\newtheorem{conjecture}[theorem]{Conjecture}
 
 	% group theory commands
@@ -48,6 +49,9 @@ snippet preamble "Preamble" b
 	% math operators
 		\DeclareMathOperator{\lcm}{lcm}
 		\DeclareMathOperator*{\bigplus}{\scalerel*{+}{\sum}}
+
+	% math punctuation
+		\newcommand{\suchthat}{\, \mid \,}
 
 	% complexity classes
 		\let\P\undefined
@@ -60,15 +64,15 @@ snippet preamble "Preamble" b
 
 	% editing
 	\newcommand{\NOTE}[1]{
-		\begin{color}{red}
+		\begin{color}{blue}
 			\textbf{NOTE:} #1
 		\end{color}
 	}
-	\newcommand{\TODO}[1]{\marginpar{\scriptsize
-		\begin{color}{blue}
+	\newcommand{\TODO}[1]{
+		\begin{color}{red}
 			\textbf{TODO:} #1
-		\end{color}\xspace
-	}}
+		\end{color}
+	}
 	\newcommand{\CHECK}[1]{\marginpar{\scriptsize
 		\begin{color}{purple}
 			\textbf{CHECK:} #1

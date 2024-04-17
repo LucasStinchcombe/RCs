@@ -30,22 +30,6 @@ snippet begin "begin{}/end{}" bi
 	${0:${VISUAL}}
 \end{$1}
 endsnippet
-snippet section "Section" bi
-\section{${1:${VISUAL}}}$0
-endsnippet
-snippet subsection "Subsection" bi
-\subsection{${1:${VISUAL}}}$0
-endsnippet
-snippet align "Align*" bi
-\begin{align*}
-    ${0:${VISUAL}}
-\end{align*}
-endsnippet
-snippet algin "Align*" bi
-\begin{align*}
-    ${0:${VISUAL}}
-\end{align*}
-endsnippet
 snippet itemize "Itemize" bi
 \begin{itemize}
     ${0:${VISUAL}}
@@ -60,30 +44,11 @@ endsnippet
 # }}}
 
 # Math Miscellaneous {{{
-snippet inmath "Inline Math Context" w
-$${1:${VISUAL}}$$0
-endsnippet
-snippet inm "Inline Math Context" w
-$${1:${VISUAL}}$$0
-endsnippet
-snippet dmath "Display Math Context" w
-\begin{align*}
-    ${0:${VISUAL}}
-\end{align*}
-endsnippet
-snippet dm "Display Math Context" w
-\begin{align*}
-    ${0:${VISUAL}}
-\end{align*}
-endsnippet
 snippet hat "Hat" w
 \hat{${1:${VISUAL}}} $0
 endsnippet
 snippet overline "Overline" w
 \overline{${1:${VISUAL}}} $0
-endsnippet
-snippet st "Such that"
-\, \mid \,
 endsnippet
 snippet text "Text" wi
 \text{${1:${VISUAL}}}$0
