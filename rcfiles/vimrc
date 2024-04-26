@@ -209,6 +209,11 @@ let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
 " use Shift-Tab to move backward through tabstops
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 " }}}
+"
+" Folding {{{
+" indent folding
+set foldmethod=indent
+" }}}
 
 " Run command and display with variables expanded
 if exists("*RunCmd") == 0
