@@ -1,5 +1,22 @@
 priority 1
 
+# Document Wireframe {{{
+snippet body "Body" b
+\title{$1}
+\author{Lucas S. Stinchcombe$^{1}$ \\\\
+	\small $^{1}$School of Computing Science, Simon Fraser University, Canada}
+\date{\today}
+\begin{document}
+\maketitle
+\end{document}
+endsnippet
+snippet bibliography "Bibligraphy"  b
+\bibliographystyle{abbrv}
+\bibliography{references}
+endsnippet
+# }}}
+
+
 # Document Organization {{{
 snippet section "Section" bi
 \section{${1:${VISUAL}}}$0
@@ -9,6 +26,31 @@ snippet subsection "Subsection" bi
 endsnippet
 snippet subsubsection "Sub-Subsection" bi
 \subsubsection{${1:${VISUAL}}}$0
+endsnippet
+snippet newpage "New Page"  b
+\newpage
+endsnippet
+snippet input "Input"  b
+\input{${0:${VISUAL}}}
+endsnippet
+# }}}
+
+# Environments {{{
+snippet begin "begin{}/end{}" bi
+\begin{$1}$2
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+snippet itemize "Itemize" bi
+\begin{itemize}
+    ${0:${VISUAL}}
+\end{itemize}
+endsnippet
+snippet figure "Figure" bi
+\begin{figure}
+	\caption{$0}
+	${0:${VISUAL}}
+\end{figure}
 endsnippet
 # }}}
 

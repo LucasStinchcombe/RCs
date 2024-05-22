@@ -3,20 +3,7 @@
 priority 10
 
 
-snippet body "Body" b
-\title{$1}
-\author{Lucas S. Stinchcombe$^{1}$ \\\\
-	\small $^{1}$School of Computing Science, Simon Fraser University, Canada}
-\date{\today}
-\begin{document}
-\maketitle
-\end{document}
-endsnippet
 
-snippet bibliography "Bibligraphy"  b
-\bibliographystyle{abbrv}
-\bibliography{references}
-endsnippet
 
 snippet cmd "new command" b
 \newcommand\\$1[$2]{${0:${VISUAL}}}
@@ -26,48 +13,23 @@ snippet del "partial derivative"  w
 \partial
 endsnippet
 
+snippet deg "Degree"  w
+\deg
+endsnippet
+
 
 
 # Environments {{{
-snippet begin "begin{}/end{}" bi
-\begin{$1}$2
-	${0:${VISUAL}}
-\end{$1}
-endsnippet
 snippet itemize "Itemize" bi
 \begin{itemize}
     ${0:${VISUAL}}
 \end{itemize}
 endsnippet
-snippet figure "Figure" bi
-\begin{figure}
-	\caption{$0}
-	${0:${VISUAL}}
-\end{figure}
-endsnippet
 # }}}
 
 # Math Miscellaneous {{{
-snippet hat "Hat" w
-\hat{${1:${VISUAL}}} $0
-endsnippet
-snippet overline "Overline" w
-\overline{${1:${VISUAL}}} $0
-endsnippet
 snippet text "Text" wi
 \text{${1:${VISUAL}}}$0
-endsnippet
-snippet tilde "Tilde" w
-\tilde{${1:${VISUAL}}}$0
-endsnippet
-snippet ll "subscript" i
-_{$1}$0
-endsnippet
-snippet widehat "Wide Hat" w
-\widehat{${1:${VISUAL}}} $0
-endsnippet
-snippet hhat "Wide Hat" w
-\widehat{${1:${VISUAL}}} $0
 endsnippet
 snippet infinity "Infinity" w
 \infty 
@@ -77,6 +39,9 @@ snippet inf "Infinity" w
 endsnippet
 snippet ast "Asterisk"  w
 \ast 
+endsnippet
+snippet checkmark "Checkmark"  w
+\checkmark 
 endsnippet
 # }}}
 
@@ -99,12 +64,6 @@ endsnippet
 # }}}
 
 
-
-# Category Theory {{{
-snippet overset "overset" w
-\overset{$1}{${0:${VISUAL}}}$2
-endsnippet
-# }}}
 
  
 priority 10

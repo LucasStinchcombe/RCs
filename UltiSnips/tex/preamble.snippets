@@ -21,6 +21,7 @@ snippet preamble "Preamble" b
 		\usepackage{amsthm}
 	% include graphics
 		\usepackage{tikz}
+		\usepackage{tikz-cd}
 	% extra symbols like \llbracket
 		\usepackage{stmaryrd}
 	% xspace and colors
@@ -31,6 +32,8 @@ snippet preamble "Preamble" b
 		\usepackage{scalerel}
 	% quantikz
 		\usepackage{quantikz}
+	% ifthen
+		\usepackage{ifthen}
 
 	% theorems
 		\newtheorem{definition}{Definition}
@@ -66,20 +69,21 @@ snippet preamble "Preamble" b
 		\DeclareMathOperator{\NQP}{NQP}
 
 	% editing
-	\newcommand{\NOTE}[1]{
-		\begin{color}{blue}
-			\textbf{NOTE:} #1
-		\end{color}
+	\newcommand{\NOTE}[2][m]{
+		\COMMENT[#1]{#2}{NOTE}{blue}
 	}
-	\newcommand{\TODO}[1]{
-		\begin{color}{red}
-			\textbf{TODO:} #1
-		\end{color}
+	\newcommand{\TODO}[2][m]{
+		\COMMENT[#1]{#2}{TODO}{red}
 	}
-	\newcommand{\CHECK}[1]{\marginpar{\scriptsize
-		\begin{color}{purple}
-			\textbf{CHECK:} #1
-		\end{color}
-	}}
-% }}}
+	\newcommand{\CHECK}[2]{
+		\COMMENT[#1]{#2}{CHECK}{purple}
+	}
+    \newcommand{\COMMENT}[4][m]{
+        \if#1m\marginpar{\scriptsize \fi
+        \begin{color}{#4}
+            \textbf{#3:} #2
+        \end{color}
+        \if#1m } \fi
+    }
+% }}} Preamble
 endsnippet
