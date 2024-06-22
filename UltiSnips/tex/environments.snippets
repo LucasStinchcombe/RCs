@@ -1,6 +1,11 @@
 priority 1
 
 # Document Wireframe {{{
+snippet header "Header"  b
+\documentclass{article}
+\input{preamble}
+\edef\MAIN{\currfilename}
+endsnippet
 snippet body "Body" b
 \title{$1}
 \author{Lucas S. Stinchcombe$^{1}$ \\\\
@@ -13,6 +18,15 @@ endsnippet
 snippet bibliography "Bibligraphy"  b
 \bibliographystyle{abbrv}
 \bibliography{references}
+endsnippet
+snippet guard "Module Guard"  b
+\ifdefined \MAIN \else
+    \documentclass{article}
+    \input{preamble}
+	\moduleopen
+\fi
+${1:${VISUAL}}
+\moduleclose
 endsnippet
 # }}}
 
@@ -71,6 +85,11 @@ snippet dm "Display Math Context" w
     ${0:${VISUAL}}
 \end{align*}
 endsnippet
+snippet dml "Display Math Context with Labels" w
+\begin{align}
+    ${0:${VISUAL}}
+\end{align}
+endsnippet
 snippet align "Align*" bi
 \begin{align*}
     ${0:${VISUAL}}
@@ -82,5 +101,6 @@ snippet algin "Align*" bi
 \end{align*}
 endsnippet
 # }}}
+
 
 priority 10

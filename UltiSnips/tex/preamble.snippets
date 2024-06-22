@@ -1,8 +1,5 @@
 priority 10
 
-snippet header "Header"  b
-	\documentclass{article}
-endsnippet
 snippet preamble "Preamble" b
 % Preamble {{{
 	% include align, etc
@@ -67,6 +64,21 @@ snippet preamble "Preamble" b
 
 		\DeclareMathOperator{\BQP}{BQP}
 		\DeclareMathOperator{\NQP}{NQP}
+
+    % compilation guard
+        \newcommand\moduleopen[1][\jobname]{
+            \ifdefined \MAIN \else
+                \edef\MAIN{\currfilename}
+                \title{#1}
+                \begin{document}
+                \maketitle
+            \fi
+        }
+        \newcommand\moduleclose{
+            \ifthenelse{\equal{\MAIN}{\currfilename}}{
+                \end{document}
+            }{}
+        }
 
 	% editing
 	\newcommand{\NOTE}[2][m]{
