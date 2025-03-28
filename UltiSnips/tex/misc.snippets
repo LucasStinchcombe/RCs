@@ -9,14 +9,21 @@ snippet cmd "new command" b
 \newcommand\\$1[$2]{${0:${VISUAL}}}
 endsnippet
 
-snippet del "partial derivative"  w
-\partial
-endsnippet
-
 snippet deg "Degree"  w
-\deg
+\deg 
 endsnippet
 
+snippet hom "Hom"  w
+\hom 
+endsnippet
+
+snippet flat "Flat"  w
+\flat 
+endsnippet
+
+snippet bullet "Bullet composition"  w
+\bullet 
+endsnippet
 
 
 # Environments {{{
@@ -24,6 +31,16 @@ snippet itemize "Itemize" bi
 \begin{itemize}
     ${0:${VISUAL}}
 \end{itemize}
+endsnippet
+snippet colorbox "Colorbox" bi
+\begin{tcolorbox}
+    ${0:${VISUAL}}
+\end{tcolorbox}
+endsnippet
+snippet cbox "Colorbox" bi
+\begin{tcolorbox}
+    ${0:${VISUAL}}
+\end{tcolorbox}
 endsnippet
 # }}}
 

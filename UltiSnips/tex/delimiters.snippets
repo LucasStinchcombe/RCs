@@ -31,13 +31,19 @@ endsnippet
 
 
 # Punctuation {{{
+snippet mid "vertical line" w
+\mid 
+endsnippet
 snippet st "Such that" w
 \suchthat 
 endsnippet
 snippet noindent "No Indent" w
 \noindent
 endsnippet
-snippet space "Space" w
+snippet quad "Quad Space" w
+\quad
+endsnippet
+snippet space "Quad Space" w
 \quad
 endsnippet
 snippet sspace "Small Space (5/18 of quad)" w
@@ -46,8 +52,14 @@ endsnippet
 snippet xsspace "Extra Small Space (4/18 of quad)" w
 \:
 endsnippet
-snippet xxsspace "Extra Extra Small Space (3/18 of quad)" w
+snippet ssspace "Extra Small Space (4/18 of quad)" w
 \:
+endsnippet
+snippet xxsspace "Extra Extra Small Space (3/18 of quad)" w
+\,
+endsnippet
+snippet sssspace "Extra Extra Small Space (3/18 of quad)" w
+\,
 endsnippet
 # }}}
 
@@ -58,23 +70,41 @@ endsnippet
 snippet widehat "Wide Hat" w
 \widehat{${1:${VISUAL}}} $0
 endsnippet
+snippet wideht "Wide Hat" w
+\widehat{${1:${VISUAL}}} $0
+endsnippet
 snippet hhat "Wide Hat" w
 \widehat{${1:${VISUAL}}} $0
 endsnippet
 snippet overline "Overline" w
 \overline{${1:${VISUAL}}} $0
 endsnippet
+snippet underline "Underline" w
+\underline{${1:${VISUAL}}} $0
+endsnippet
 snippet overset "Overset" w
 \overset{$2}{${1:${VISUAL}}}$3
 endsnippet
+snippet underset "Underset" w
+\underset{$2}{${1:${VISUAL}}}$3
+endsnippet
 snippet tilde "Tilde" w
 \tilde{${1:${VISUAL}}}$0
+endsnippet
+snippet widetilde "Wide Tilde" w
+\widetilde{${1:${VISUAL}}}$0
+endsnippet
+snippet wtilde "Wide Tilde" w
+\widetilde{${1:${VISUAL}}}$0
 endsnippet
 snippet ll "Subscript" i
 _{$1}$0
 endsnippet
 snippet vert "Vertical bar"  w
 \mid
+endsnippet
+snippet sharp "Sharp"  w
+\sharp 
 endsnippet
 # }}}
 
@@ -84,5 +114,11 @@ snippet downarrow "Down Arrow"  w
 endsnippet
 snippet darrow "Down Arrow"  w
 \downarrow 
+endsnippet
+snippet uparrow "Up Arrow"  w
+\uparrow 
+endsnippet
+snippet uarrow "Up Arrow"  w
+\uparrow 
 endsnippet
 # }}}

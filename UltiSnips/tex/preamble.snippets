@@ -7,6 +7,8 @@ snippet preamble "Preamble" b
 		\usepackage{amssymb}
 	% include hyperlinks
 		\usepackage{hyperref}
+	% include current filename
+		\usepackage{currfile}
 	% include mathbb, etc
 		\usepackage{amsfonts}
 	% self explanatory
@@ -33,6 +35,8 @@ snippet preamble "Preamble" b
 		\usepackage{ifthen}
 	% cleveref
 		\usepackage{cleveref}
+	% tcolorbox
+		\usepackage{tcolorbox}
 
 	% theorems
 		\newtheorem{definition}{Definition}
@@ -66,6 +70,7 @@ snippet preamble "Preamble" b
 
 		\DeclareMathOperator{\BQP}{BQP}
 		\DeclareMathOperator{\NQP}{NQP}
+		\DeclareMathOperator{\poly}{poly}
 
     % compilation guard
         \newcommand\moduleopen[1][\jobname]{
@@ -99,5 +104,16 @@ snippet preamble "Preamble" b
         \end{color}
         \if#1m } \fi
     }
+    \newboolean{INCLUDE_EXTRA}
+    \setboolean{INCLUDE_EXTRA}{false}
+    \newcommand{\EXTRA}[1]{
+        \ifthenelse{\boolean{INCLUDE_EXTRA}}{
+            \COMMENT[i]{#1}{EXTRA:}{darkgray}
+        }{}
+    }
 % }}} Preamble
+endsnippet
+
+snippet usepackage "Use Package"  b
+\usepackage{${0:${VISUAL}}}
 endsnippet
