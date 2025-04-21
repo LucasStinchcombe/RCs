@@ -1,11 +1,15 @@
 priority 10
 
 # Comments {{{
+
 snippet todo "TODO" w
 \TODO[${2:i}]{${1:${VISUAL}}} $0
 endsnippet
 snippet TODO "TODO" w
 \TODO[${2:i}]{${1:${VISUAL}}} $0
+endsnippet
+snippet todom "TODO Margin" w
+\TODO[${2:m}]{${1:${VISUAL}}} $0
 endsnippet
 snippet note "NOTE" w
 \NOTE[${2:i}]{${1:${VISUAL}}} $0
@@ -13,11 +17,17 @@ endsnippet
 snippet NOTE "NOTE" w
 \NOTE[${2:i}]{${1:${VISUAL}}} $0
 endsnippet
+snippet notem "NOTE Margin" w
+\NOTE[${2:m}]{${1:${VISUAL}}} $0
+endsnippet
 snippet check "CHECK" w
-\CHECK[$2]{${1:${VISUAL}}} $0
+\CHECK[${2:i}]{${1:${VISUAL}}} $0
 endsnippet
 snippet CHECK "CHECK" w
-\CHECK[$2]{${1:${VISUAL}}} $0
+\CHECK[${2:i}]{${1:${VISUAL}}} $0
+endsnippet
+snippet checkm "CHECK Margin" w
+\CHECK[${2:m}]{${1:${VISUAL}}} $0
 endsnippet
 # }}}
 
