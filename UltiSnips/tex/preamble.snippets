@@ -37,6 +37,8 @@ snippet preamble "Preamble" b
 		\usepackage{cleveref}
 	% tcolorbox
 		\usepackage{tcolorbox}
+	% subfigures
+	\usepackage{subcaption}
 
 	% theorems
 		\newtheorem{definition}{Definition}
@@ -65,12 +67,15 @@ snippet preamble "Preamble" b
 		\let\P\undefined
 		\DeclareMathOperator{\P}{P}
 		\DeclareMathOperator{\NP}{NP}
+		\DeclareMathOperator{\BPP}{BPP}
 		\DeclareMathOperator{\PP}{PP}
 		\DeclareMathOperator{\PH}{PH}
 		\DeclareMathOperator{\UP}{UP}
 
 		\DeclareMathOperator{\BQP}{BQP}
+		\DeclareMathOperator{\EQP}{EQP}
 		\DeclareMathOperator{\NQP}{NQP}
+
 		\DeclareMathOperator{\poly}{poly}
 
     % compilation guard

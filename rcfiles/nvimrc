@@ -14,3 +14,9 @@ autocmd BufWinEnter,WinEnter term://* startinsert
 
 " nerdTree toggle to work in terminal mode
 tnoremap <leader>f <C-\><C-n>:NERDTreeToggle<cr>
+
+" Enable 24-bit true color
+set termguicolors
+
+Plug 'folke/tokyonight.nvim'
+colorscheme tokyonight

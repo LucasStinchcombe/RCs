@@ -189,6 +189,7 @@ nnoremap <leader>h :vsp<CR>
 " Open a tab with current pane
 nnoremap <leader>o :tabedit %<CR>
 
+let g:copilot_enabled = v:false
 
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red

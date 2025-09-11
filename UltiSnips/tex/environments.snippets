@@ -47,6 +47,26 @@ endsnippet
 snippet input "Input"  b
 \input{${0:${VISUAL}}}
 endsnippet
+snippet minipage "Minipage"  b
+\begin{minipage}{$1\linewidth}
+	${0:${VISUAL}}
+\end{minipage}
+endsnippet
+snippet scalebox "Scalebox"  b
+\scalebox{$1 0.5}{${0:${VISUAL}}}
+endsnippet
+snippet scalepage "Scalebox Minipage"  b
+\scalebox{$1 0.5}{
+\begin{minipage}{$2\linewidth}
+	${0:${VISUAL}}
+\end{minipage}
+}
+endsnippet
+snippet multicols "Multicols"  b
+\begin{multicols}{$1 2}
+	${0:${VISUAL}}
+\end{multicols}
+endsnippet
 # }}}
 
 # Environments {{{
@@ -65,6 +85,12 @@ snippet figure "Figure" bi
 	\caption{$0}
 	${0:${VISUAL}}
 \end{figure}
+endsnippet
+snippet subfigure "Subfigure" bi
+\begin{subfigure}
+	\caption{$0}
+	${0:${VISUAL}}
+\end{subfigure}
 endsnippet
 # }}}
 
