@@ -38,7 +38,7 @@ snippet preamble "Preamble" b
 	% tcolorbox
 		\usepackage{tcolorbox}
 	% subfigures
-	\usepackage{subcaption}
+		\usepackage{subcaption}
 
 	% theorems
 		\newtheorem{definition}{Definition}
@@ -121,5 +121,11 @@ snippet preamble "Preamble" b
 endsnippet
 
 snippet usepackage "Use Package"  b
+\usepackage{${0:${VISUAL}}}
+endsnippet
+snippet package "Use Package"  b
+\usepackage{${0:${VISUAL}}}
+endsnippet
+snippet pkg "Use Package"  b
 \usepackage{${0:${VISUAL}}}
 endsnippet
