@@ -97,6 +97,7 @@ highlight IncSearch cterm=bold ctermfg=white ctermbg=magenta gui=bold guifg=whit
 " }}} UI Config
 
 
+
 " TODO clean these up
 " Tabs and Spaces {{{
 " show existing tab with 4 spaces width
@@ -190,6 +191,9 @@ nnoremap <leader>h :vsp<CR>
 nnoremap <leader>o :tabedit %<CR>
 
 let g:copilot_enabled = v:false
+let g:ale_pattern_options = {
+\   '.*\.tex$': {'ale_enabled': 0},
+\}
 
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
