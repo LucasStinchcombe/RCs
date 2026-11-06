@@ -43,9 +43,13 @@ snippet preamble "Preamble" b
 		\usepackage{wrapfig}
 	% cells
 		\usepackage{makecell}
+	% cells
+		\usepackage{dsfont}
+	% apxproof
+        \usepackage[bibliography=common]{apxproof}
 
 	% theorems
-		\newtheorem{definition}{Definition}
+		\newtheoremrep{definition}{Definition}
 		\newtheorem{theorem}{Theorem}
 		\newtheorem{corollary}[theorem]{Corollary}
 		\newtheorem{lemma}[theorem]{Lemma}
@@ -71,6 +75,7 @@ snippet preamble "Preamble" b
 	% complexity classes
 		\let\P\undefined
 		\DeclareMathOperator{\P}{P}
+		\DeclareMathOperator{\RP}{RP}
 		\DeclareMathOperator{\NP}{NP}
 		\DeclareMathOperator{\BPP}{BPP}
 		\DeclareMathOperator{\PP}{PP}
@@ -119,7 +124,11 @@ snippet preamble "Preamble" b
     \setboolean{INCLUDE_EXTRA}{false}
     \newcommand{\EXTRA}[1]{
         \ifthenelse{\boolean{INCLUDE_EXTRA}}{
-            \COMMENT[i]{#1}{EXTRA:}{darkgray}
+            \begin{tcolorbox}[colback=gray!10, colframe=darkgray,
+                fonttitle=\bfseries\small, title=Extra, left=4pt, right=4pt,
+                top=4pt, bottom=4pt]
+                \small #1
+            \end{tcolorbox}
         }{}
     }
 % }}} Preamble

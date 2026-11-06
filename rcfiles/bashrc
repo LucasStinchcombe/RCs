@@ -129,9 +129,6 @@ alias tmux="tmux -2"
 alias objdump="objdump -Mintel"
     # default intel syntax
 
-alias gh="fg"
-    # Sometimes I type gh for fg
-
 alias fgfg="fg"
     # Sometimes I type fg, go away, return and retype fg
 
